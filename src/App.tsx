@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -8,6 +7,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CIS Scheduler
                 Kendell Rennie, 
+                Shaozhe Li
                 <p>
                 Welcome!
 
