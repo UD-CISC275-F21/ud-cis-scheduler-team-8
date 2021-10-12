@@ -7,7 +7,8 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CIS Scheduler
                 Kendell Rennie, 
-                Shaozhe Li
+                Shaozhe Li，
+                Feitong Liu
                 <p>
                 Welcome!
 
