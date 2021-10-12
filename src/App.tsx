@@ -6,9 +6,11 @@ function App(): JSX.Element {
         <div className="CIS Scheduler">
             <header className="App-header">
                 UD CIS Scheduler
+                Kendell Rennie, 
                 Shaozhe Li
                 <p>
                 Welcome!
+
                 </p>
             </header>
         </div>
