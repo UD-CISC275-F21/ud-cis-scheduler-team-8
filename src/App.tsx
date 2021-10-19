@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App(): JSX.Element {
     return (
-        <div>
+        <div> 
+            <p className="Title"> UD CISC SCHEDULER </p>
             <Tab />
         </div>
 
