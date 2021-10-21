@@ -48,6 +48,15 @@
 .table{
   display:flex;
   justify-content: space-around;
+ 
+  
+}
+
+.course_Pool{
+ position: absolute;
+top: 100px;
+left: 70%;
+
   
 }
 

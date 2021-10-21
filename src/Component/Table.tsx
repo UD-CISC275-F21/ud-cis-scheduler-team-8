@@ -1,5 +1,6 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
+import Course_pull from "./Course_pool";
 //import { Wrapper } from "./Table.styles";
 import "./Table.css";
 
@@ -107,7 +108,11 @@ function Tab(): JSX.Element {
                 </tr>
             </tbody>
         </Table>
+
+        <Course_pull/>
     </div>;
+
+   
 
 }
 export default Tab;
