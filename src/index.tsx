@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Tab from "./Tab";
 import Header from "./Header";
 import reportWebVitals from "./reportWebVitals";
 
