@@ -1,12 +1,15 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
+//import { Wrapper } from "./Table.styles";
+import "./Table.css";
+
 function Tab(): JSX.Element {
-    return <div>
+    return <div className="classtable">
+        
         <Table responsive="sm">
             <thead>
                 <tr>
-                    <th>Freshman</th>
-                    <th></th>
+                    <th className="year">FRESHMAN</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,147 +19,91 @@ function Tab(): JSX.Element {
                 </tr>
                 <tr>
                     <td>CISC108</td>
-                    <td></td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>CISC181</td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>MATH242</td>
+                </tr>
+                <tr>
+                    <td>ENGL110</td>
+                    <td>CISC210</td>
                 </tr>
             </tbody>
         </Table>
         <Table responsive="md">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
+                    <th>SOPHOMORE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>Fall</td>
+                    <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>CISC220</td>
+                    <td>CISC275</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>CISC260</td>
+                    <td>CISC355</td>
+                </tr>
+                <tr>
+                    <td>MATH210</td>
+                    <td></td>
+                    
                 </tr>
             </tbody>
         </Table>
         <Table responsive="lg">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
+                    <th>JUNIOR</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>Fall</td>
+                    <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>CISC108</td>
+                    <td>CISC181</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>MATH241</td>
+                    <td>MATH242</td>
+                </tr>
+                <tr>
+                    <td>ENGL110</td>
+                    <td>CISC210</td>
                 </tr>
             </tbody>
         </Table>
         <Table responsive="xl">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
-                    <th>Table heading</th>
+                    <th>SENIOR</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>Fall</td>
+                    <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>CISC108</td>
+                    <td>CISC181</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
-                    <td>Table cell</td>
+                    <td>MATH241</td>
+                    <td>MATH242</td>
+                </tr>
+                <tr>
+                    <td>ENGL110</td>
+                    <td>CISC210</td>
                 </tr>
             </tbody>
         </Table>
