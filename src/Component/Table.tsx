@@ -1,6 +1,5 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
-import Alert from "react-popup-alert";
 import "./Table.css";
 
 function Tab(): JSX.Element {
