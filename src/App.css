@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.Head{
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 2vmin);
+  color: white;
+}
+
+.table{
+  display:flex;
+  justify-content: space-around;
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
