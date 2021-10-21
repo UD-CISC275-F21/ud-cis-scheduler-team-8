@@ -1,6 +1,6 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
-//import { Wrapper } from "./Table.styles";
+import Alert from "react-popup-alert";
 import "./Table.css";
 
 function Tab(): JSX.Element {
@@ -111,3 +111,4 @@ function Tab(): JSX.Element {
 
 }
 export default Tab;
+
