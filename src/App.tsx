@@ -1,20 +1,15 @@
 import React from "react";
 import "./App.css";
+import Tab from "./Component/Table";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App(): JSX.Element {
     return (
-        <div className="CIS Scheduler">
-            <header className="App-header">
-                UD CIS Scheduler
-                Kendell Rennie, 
-                Shaozhe Li，
-                Feitong Liu
-                <p>
-                Welcome!
-
-                </p>
-            </header>
+        <div> 
+            <p className="Title"> UD CISC SCHEDULER </p>
+            <Tab />
         </div>
+
     );
 }
 
