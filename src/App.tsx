@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
 import Tab from "./Component/Table";
+import Course_pull from "./Component/Course_pool";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App(): JSX.Element {
     return (
         <div> 
-            <p className="Title"> UD CISC SCHEDULER </p>
+            <Course_pull/>
             <Tab />
         </div>
 
