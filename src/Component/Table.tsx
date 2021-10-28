@@ -118,12 +118,20 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC220") ; handleShow(); }>CISC220</td>
-                    <td className="click" onClick={()=> {setCurrentCourse("CISC275") ; handleShow(); }>CISC275</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[3]); setShow(true); 
+                    }}>CISC220</td>
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[4]); setShow(true); 
+                    }}>CISC275</td>
                 </tr>
                 <tr>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC260") ; handleShow(); }>CISC260</td>
-                    <td className="click" onClick={()=> {setCurrentCourse("CISC355") ; handleShow(); }>CISC355</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[5]); setShow(true); 
+                    }}>CISC260</td>
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[6]); setShow(true); 
+                    }}>CISC355</td>
                 </tr>
                 <tr>
                     <td>MATH210</td>
@@ -144,8 +152,12 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC108") ; handleShow(); }>CISC108</td>
-                    <td className="click" onClick={()=> {setCurrentCourse("CISC181") ; handleShow(); }>CISC181</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[0]); setShow(true);
+                    }}>CISC108</td>
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[1]); setShow(true); 
+                    }}>CISC181</td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -153,7 +165,9 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                 </tr>
                 <tr>
                     <td>ENGL110</td>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC210") ; handleShow(); }>CISC210</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[2]); setShow(true);
+                    }}>CISC210</td>
                 </tr>
             </tbody>
         </Table>
@@ -169,8 +183,12 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC108") ; handleShow(); }>CISC108</td>
-                    <td className="click" onClick={()=> {setCurrentCourse("CISC181") ; handleShow(); }>CISC181</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[0]); setShow(true);
+                    }}>CISC108</td>
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[1]); setShow(true); 
+                    }}>CISC181</td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -178,7 +196,9 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                 </tr>
                 <tr>
                     <td>ENGL110</td>
-                    {/* <td className="click" onClick={()=> {setCurrentCourse("CISC210") ; handleShow(); }>CISC210</td> */}
+                    <td className="click" onClick={()=> {
+                        setCurrentCourse(COURSES[2]); setShow(true);
+                    }}>CISC210</td>
                 </tr>
             </tbody>
         </Table>
