@@ -94,12 +94,10 @@ function Tab({currentCourse, setCurrentCourse, deck}:
 
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[0]); setShow(true);
-                    }}>CISC108</td>
+                    }}>CISC108 <button><IoRemoveCircleOutline /></button></td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
-                    }}>CISC181</td>
-                    <td>CISC108 <button><IoRemoveCircleOutline /></button></td> 
-                    <td>CISC181 <button><IoRemoveCircleOutline /></button></td>
+                    }}>CISC181 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
                     <td>MATH241 <button><IoRemoveCircleOutline /></button></td>
@@ -127,13 +125,11 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                 <tr>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[3]); setShow(true); 
-                    }}>CISC220</td>
+                    }}>CISC220 <button>delete</button></td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[4]); setShow(true); 
-                    }}>CISC275</td>
+                    }}>CISC275 <button>delete</button></td>
 
-                    <td>CISC220 <button>delete</button></td>
-                    <td>CISC275 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td className="click" onClick={()=> {
@@ -164,12 +160,10 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                 <tr>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[0]); setShow(true);
-                    }}>CISC108</td>
+                    }}>CISC108 <button>delete</button></td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
-                    }}>CISC181</td>
-                    <td>CISC108 <button>delete</button></td>
-                    <td>CISC181 <button>delete</button></td>
+                    }}>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -198,12 +192,10 @@ function Tab({currentCourse, setCurrentCourse, deck}:
 
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[0]); setShow(true);
-                    }}>CISC108</td>
+                    }}>CISC108 <button>delete</button></td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
-                    }}>CISC181</td>
-                    <td>CISC108 <button>delete</button></td>
-                    <td>CISC181 <button>delete</button></td>
+                    }}>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
