@@ -54,11 +54,39 @@
 
 .course_Pool{
  position: absolute;
+ width: 550px;
+ height:100%;
+ border: 1px solid black;
+padding: 10px;
+margin: 10px;
 top: 100px;
 left: 70%;
 
-  
 }
+li {
+  float: left;
+}
+
+.course_Pool .item{
+  width: 500px;
+ border: 2px solid black;
+
+ background-color: #2f4353;
+ 
+ background:linear-gradient( to bottom, #bcc6cc, #eee, #bcc6cc);
+
+
+ list-style: none;
+float: left;
+ word-wrap:break-word;
+padding: 10px;
+margin: 10px;
+top: 100px;
+left: 70%;
+}
+
+
+
 
 @keyframes App-logo-spin {
   from {
