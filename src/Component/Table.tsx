@@ -1,28 +1,34 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
 import "./Table.css";
+import { IoRemoveCircleOutline } from "react-icons/io5";
+
+
 
 function Tab(): JSX.Element {
+
     return <div className="classtable">
         
         <Table responsive="sm">
             <thead>
                 <tr>
                     <th className="year">FRESHMAN</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Fall</td>
                     <td>Spring</td>
+                    
                 </tr>
                 <tr>
-                    <td>CISC108</td>
-                    <td>CISC181</td>
+                    <td>CISC108 <button><IoRemoveCircleOutline /></button></td> 
+                    <td>CISC181 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
-                    <td>MATH241</td>
-                    <td>MATH242</td>
+                    <td>MATH241 <button><IoRemoveCircleOutline /></button></td>
+                    <td>MATH242 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
                     <td>ENGL110</td>
@@ -42,8 +48,8 @@ function Tab(): JSX.Element {
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>CISC220</td>
-                    <td>CISC275</td>
+                    <td>CISC220 <button>delete</button></td>
+                    <td>CISC275 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>CISC260</td>
@@ -68,8 +74,8 @@ function Tab(): JSX.Element {
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>CISC108</td>
-                    <td>CISC181</td>
+                    <td>CISC108 <button>delete</button></td>
+                    <td>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -93,8 +99,8 @@ function Tab(): JSX.Element {
                     <td>Spring</td>
                 </tr>
                 <tr>
-                    <td>CISC108</td>
-                    <td>CISC181</td>
+                    <td>CISC108 <button>delete</button></td>
+                    <td>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
