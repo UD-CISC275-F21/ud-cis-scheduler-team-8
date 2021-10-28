@@ -1,5 +1,5 @@
 
-export interface courses{
+export interface Course{
     CourseID: string;
     Name: string;
     Kind: string;
