@@ -60,8 +60,8 @@ function Course_pull(): JSX.Element {
 
     for (let i = 0; i < 9; i++) {
         const box =
-            <div className="item">
-                <li>Course ID:_ </li>
+            <div key={i} className="item">
+                <li >Course ID:_ </li>
                 <div>{List_of_Classes[i][0]}</div>
                 {/*List_of_Classes[i]*/}
                 <li>Title_</li>
