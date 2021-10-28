@@ -1,6 +1,7 @@
 import Table from "react-bootstrap/Table";
 import React, { useState } from "react";
 import "./Table.css";
+import { IoRemoveCircleOutline } from "react-icons/io5";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import {Course} from "../interfaces/courses";
@@ -72,6 +73,7 @@ function Tab({currentCourse, setCurrentCourse, deck}:
     {currentCourse: Course, setCurrentCourse: (c:Course)=>void, deck: Course[]}): JSX.Element {
  
     const [show, setShow] = useState(false);
+
     return <div className="classtable">
         <Popup show={show} setShow={setShow} showCourse={setCurrentCourse}/>
 
@@ -79,24 +81,29 @@ function Tab({currentCourse, setCurrentCourse, deck}:
             <thead>
                 <tr>
                     <th className="year">FRESHMAN</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Fall</td>
                     <td>Spring</td>
+                    
                 </tr>
                 <tr>
+
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[0]); setShow(true);
                     }}>CISC108</td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
                     }}>CISC181</td>
+                    <td>CISC108 <button><IoRemoveCircleOutline /></button></td> 
+                    <td>CISC181 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
-                    <td>MATH241</td>
-                    <td>MATH242</td>
+                    <td>MATH241 <button><IoRemoveCircleOutline /></button></td>
+                    <td>MATH242 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
                     <td>ENGL110</td>
@@ -124,6 +131,9 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[4]); setShow(true); 
                     }}>CISC275</td>
+
+                    <td>CISC220 <button>delete</button></td>
+                    <td>CISC275 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td className="click" onClick={()=> {
@@ -158,6 +168,8 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
                     }}>CISC181</td>
+                    <td>CISC108 <button>delete</button></td>
+                    <td>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -183,12 +195,15 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td>Spring</td>
                 </tr>
                 <tr>
+
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[0]); setShow(true);
                     }}>CISC108</td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[1]); setShow(true); 
                     }}>CISC181</td>
+                    <td>CISC108 <button>delete</button></td>
+                    <td>CISC181 <button>delete</button></td>
                 </tr>
                 <tr>
                     <td>MATH241</td>
@@ -209,5 +224,10 @@ function Tab({currentCourse, setCurrentCourse, deck}:
    
 
 }
+
+
+
+
+
 export default Tab;
 

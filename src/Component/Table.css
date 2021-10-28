@@ -10,3 +10,9 @@
 .click{
     color: blue;
 }
+
+button{
+    background-color:transparent;
+    border: none;
+}
+
