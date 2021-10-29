@@ -16,7 +16,7 @@ function App(): JSX.Element {
 
     return (
         <div> 
-            <Header/>
+            <Header/> 
             <Course_pull/>
 
             <Tab 
