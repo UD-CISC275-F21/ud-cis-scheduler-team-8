@@ -173,7 +173,7 @@ function Tab({currentCourse, setCurrentCourse, deck}:
                     <td>ENGL110 <button><IoRemoveCircleOutline /></button></td>
                     <td className="click" onClick={()=> {
                         setCurrentCourse(COURSES[2]); setShow(true);
-                    }}>CISC210 <button><IoRemoveCircleOutline /></button></td>
+                    }}>CISC210 </td>
                 </tr>
             </tbody>
         </Table>
