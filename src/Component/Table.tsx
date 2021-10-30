@@ -1,15 +1,21 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
-import "./Table.css";
 import { IoRemoveCircleOutline } from "react-icons/io5";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {Button, Col} from "react-bootstrap";
+import {Course} from "../interfaces/courses";
 
 
 
-function Tab(): JSX.Element {
+export function Tab({setCourse}:{setCourse:(c:Course)=>void}): JSX.Element {
 
-    return <div className="classtable">
-        
-        <Table responsive="sm">
+    return <Col className="planner" xs={7}>
+        <h2>CISC PLANNER</h2>
+        {setCourse}
+        <Button><IoRemoveCircleOutline /></Button>
+    </Col>;
+
+    /*<Table responsive="sm">
             <thead>
                 <tr>
                     <th className="year">FRESHMAN</th>
@@ -23,7 +29,7 @@ function Tab(): JSX.Element {
                     
                 </tr>
                 <tr>
-                    <td>CISC108 <button><IoRemoveCircleOutline /></button></td> 
+                    <td>CISC108 <Button variant="outline-secondary"><IoRemoveCircleOutline /></Button></td> 
                     <td>CISC181 <button><IoRemoveCircleOutline /></button></td>
                 </tr>
                 <tr>
@@ -114,7 +120,7 @@ function Tab(): JSX.Element {
         </Table>
 
        
-    </div>;
+    </Col>;*/
 
    
 

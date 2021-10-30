@@ -1,8 +1,8 @@
 
-export interface courses{
-    CourseID: string;
+export interface Course{
+    ID: number;
     Name: string;
     Kind: string;
+    Prereq: string;
     Description: string;
-    Prerequisite: string;
 }

@@ -1,7 +1,20 @@
 import React from "react";
 import "../App.css";
+import {Course} from "../interfaces/courses";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Button, Col} from "react-bootstrap";
+ 
+export function CoursePool({course}:{course:Course}): JSX.Element {
+    return <Col className="pool">
+        <h2>Course Pool</h2>
+        <div>{course.Name}</div>
+        <div>{course.Name}</div>
+
+
+    </Col>;
+}
+
 
 /*function Course_pull(): JSX.Element {
     return (
@@ -42,10 +55,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
             </table>
         </div>
     );
-}*/
+}
 
 
 function Course_pull(): JSX.Element {
+    /*
     const List_of_Classes: (string | number)[][] = [];
     List_of_Classes[0] = [108, " Introduction to computer Science 1"];
     List_of_Classes[1] = [181, " Introduction to computer Science 2"];
@@ -63,7 +77,7 @@ function Course_pull(): JSX.Element {
             <div key={i} className="item">
                 <li >Course ID:_ </li>
                 <div>{List_of_Classes[i][0]}</div>
-                {/*List_of_Classes[i]*/}
+                {/*List_of_Classes[i]}
                 <li>Title_</li>
                 <div> {List_of_Classes[i][1]}</div>
             </div>;
@@ -71,6 +85,7 @@ function Course_pull(): JSX.Element {
     }
     return <div className="course_Pool"> {list}</div>;
 }
+*/
 
 
-export default Course_pull;
+export default CoursePool;
