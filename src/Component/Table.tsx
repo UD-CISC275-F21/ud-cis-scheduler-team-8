@@ -4,15 +4,19 @@ import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Button, Col} from "react-bootstrap";
 import {Course} from "../interfaces/courses";
+import COURSES from "../assets/courses.json";
 
 
 
 export function Tab({setCourse}:{setCourse:(c:Course)=>void}): JSX.Element {
+    
 
     return <Col className="planner" xs={7}>
         <h2>CISC PLANNER</h2>
         {setCourse}
-        <Button><IoRemoveCircleOutline /></Button>
+        <Button onClick={
+            ()=>setCourse(COURSES[1] as Course)
+        }><IoRemoveCircleOutline /></Button>
     </Col>;
 
     /*<Table responsive="sm">
