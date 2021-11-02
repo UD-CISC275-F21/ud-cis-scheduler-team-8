@@ -6,7 +6,13 @@
 .year{
     text-align: center;
 }
+
+.click{
+    color: blue;
+}
+
 button{
     background-color:transparent;
     border: none;
 }
+
