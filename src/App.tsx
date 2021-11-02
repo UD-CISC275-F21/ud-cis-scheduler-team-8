@@ -22,7 +22,9 @@ function App(): JSX.Element {
                 <Header/>
             </Row>
             <Row>
-                <Tab setCourse={SetActiveCourse}></Tab>
+                <Tab 
+                    setCourse={SetActiveCourse} 
+                    course={ActiveCourse}></Tab>
                 <CoursePool course={ActiveCourse}></CoursePool>
             </Row>
             

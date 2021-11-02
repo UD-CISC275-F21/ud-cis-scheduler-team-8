@@ -8,55 +8,35 @@ import COURSES from "../assets/courses.json";
 
 
 
-export function Tab({setCourse}:{setCourse:(c:Course)=>void}): JSX.Element {
+export function Tab({setCourse,course}:{setCourse:(c:Course)=>void,course:Course}): JSX.Element {
     
 
     return <Col className="planner" xs={7}>
         <h2>CISC PLANNER</h2>
-        <Row>
-            <Col></Col>
-            <Col><h3>Spring</h3></Col>
-            <Col><h3>Fall</h3></Col>
-        </Row>  
-        <Row>
-            <Col>FRESHMAN</Col>
-            <Col>
-                <div>
-                    {setCourse}
-                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
-                    CISC{setCourse}: {setCourse}
-                </div>
-                <div>
-                    {setCourse}
-                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
-                    CISC{setCourse}: {setCourse}
-                </div>
-            </Col>
-            <Col>
-                <div>
-                    {setCourse}
-                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
-                    CISC{setCourse}: {setCourse}
-                </div>
-            </Col>
-        </Row>
-        <Row>
-            <Col>SOPHOMORE</Col>
-            <Col>
-                <div>
-                    {setCourse}
-                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
-                    CISC{setCourse}: {setCourse}
-                </div>
-            </Col>
-            <Col>
-                <div>
-                    {setCourse}
-                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
-                    CISC{setCourse}: {setCourse}
-                </div>
-            </Col>
-        </Row>
+        <Table responsive="sm">
+            <thead>
+                <tr>
+                    <th className="year">FRESHMAN</th>
+                    <th> </th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fall</td>
+                    <td>Spring</td></tr>
+                <tr>
+                    <td>CISC{course.ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>CISC{course.ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                </tr>
+                <tr>
+                    <td>CISC{course.ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>CISC{course.ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                </tr>
+                <tr>
+                    <td>ENGL110</td>
+                    <td>CISC210</td>
+                </tr>
+            </tbody>
+        </Table>
     </Col>;
 
     /*<Table responsive="sm">

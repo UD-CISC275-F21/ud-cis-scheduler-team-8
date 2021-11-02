@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: "Georgia", Times, serif;
+  font-size:large;
 }
 
 
@@ -23,7 +24,14 @@
   background-color:rgb(233, 236, 245);
 
 }
-
+h2{
+  padding:5px;
+}
+.planner h3{
+  color:gray;
+  padding:3px;
+  font-size:23px;
+}
 /*
 .table{
   display:flex;
