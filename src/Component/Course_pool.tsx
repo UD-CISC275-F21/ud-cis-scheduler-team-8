@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 /*function Course_pull(): JSX.Element {
     return (
@@ -45,7 +46,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 }*/
 
 
-function Course_pull(): JSX.Element {
+function Course_pull(props: any): JSX.Element {
     const List_of_Classes: (string | number)[][] = [];
     List_of_Classes[0] = [108, " Introduction to computer Science 1"];
     List_of_Classes[1] = [181, " Introduction to computer Science 2"];
@@ -58,9 +59,13 @@ function Course_pull(): JSX.Element {
     List_of_Classes[8] = [242, " Calculus 2"];
     const list: JSX.Element[] = [];
 
+
+
+
+
     for (let i = 0; i < 9; i++) {
         const box =
-            <div key={i} className="item">
+            <div key={i} className="item" onClick={() => Fire_item(i)}>
                 <li >Course ID:_ </li>
                 <div>{List_of_Classes[i][0]}</div>
                 {/*List_of_Classes[i]*/}
@@ -69,8 +74,20 @@ function Course_pull(): JSX.Element {
             </div>;
         list[i] = box;
     }
+
+
+    function Fire_item(id: number) {
+        props.clickHandler(id);
+
+
+
+
+    }
+
+
     return <div className="course_Pool"> {list}</div>;
 }
+
 
 
 export default Course_pull;
