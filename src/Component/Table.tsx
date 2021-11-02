@@ -5,7 +5,7 @@ import { IoRemoveCircleOutline } from "react-icons/io5";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import {Course} from "../interfaces/courses";
-import COURSES from "../assets/coursedata.json";
+import COURSES from "../assets/courses.json";
 
 function Popup({showCourse,show,setShow}: 
     {showCourse: (c:Course) => void, show: boolean,
@@ -213,9 +213,9 @@ function Tab({currentCourse, setCurrentCourse, deck}:
        
     </div>;
 
-   
 
-}
+
+} 
 
 
 
