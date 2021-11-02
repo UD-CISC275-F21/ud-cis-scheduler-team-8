@@ -2,7 +2,7 @@ import Table from "react-bootstrap/Table";
 import React from "react";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Button, Col,Row} from "react-bootstrap";
+import {Button, Col} from "react-bootstrap";
 import {Course} from "../interfaces/courses";
 import COURSES from "../assets/courses.json";
 

@@ -13,9 +13,8 @@ import {Course} from "./interfaces/courses";
 
 function App(): JSX.Element {
     const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
-   /* const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0] as Course);
+    /*const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0] as Course);
     const [deck, setDeck] = useState<Course[]>(COURSES);*/
-
     return (
         <Container className="App"> 
             <Row>
