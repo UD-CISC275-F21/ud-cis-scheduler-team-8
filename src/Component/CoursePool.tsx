@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
-
+import {Course} from "../interfaces/courses";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Button, Col, Modal} from "react-bootstrap";
+import { IoIosMore,IoIosAddCircleOutline } from "react-icons/io";
 
-/*function Course_pull(): JSX.Element {
+
+export function CoursePool({course}:{course:Course}): JSX.Element {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    
+    return <Col className="pool">
+        <h2>Course Pool</h2>
+        <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
+            CISC{course.ID}: {course.Name}
+            <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
+        </div>
+        <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
+            CISC{course.ID}: {course.Name}
+            <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
+        </div>
+
+        
+        
+        
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>
+                    <strong>CISC{course.ID}: {course.Name}</strong>
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                {course.Description}
+            </Modal.Body>
+        </Modal>
+
+
+    </Col>;
+}
+
+
+/*
+function Course_pull(): JSX.Element {
     return (
 
         <div>
@@ -42,10 +81,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
             </table>
         </div>
     );
-}*/
+}
 
 
 function Course_pull(): JSX.Element {
+    
     const List_of_Classes: (string | number)[][] = [];
     List_of_Classes[0] = [108, " Introduction to computer Science 1"];
     List_of_Classes[1] = [181, " Introduction to computer Science 2"];
@@ -63,7 +103,7 @@ function Course_pull(): JSX.Element {
             <div key={i} className="item">
                 <li >Course ID:_ </li>
                 <div>{List_of_Classes[i][0]}</div>
-                {/*List_of_Classes[i]*/}
+                {/*List_of_Classes[i]}
                 <li>Title_</li>
                 <div> {List_of_Classes[i][1]}</div>
             </div>;
@@ -71,6 +111,7 @@ function Course_pull(): JSX.Element {
     }
     return <div className="course_Pool"> {list}</div>;
 }
+*/
 
 
-export default Course_pull;
+export default CoursePool;

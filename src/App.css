@@ -1,50 +1,38 @@
 .App {
   text-align: center;
+  font-family: "Georgia", Times, serif;
+  font-size:large;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.Title{
-  text-align: center;
-  font-size: 30px;
-  color:#33c7f0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 .Head{
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #969ebb;
   justify-content: center;
   font-size: calc(50px + 2vmin);
   color: white;
+  padding:2px;
+  margin-bottom:6px;
 }
 
+.planner{
+  font-family: "Georgia", Times, serif;
+  
+}
+
+.pool{
+  font-family: "Georgia", Times, serif;
+  background-color:rgb(233, 236, 245);
+
+}
+h2{
+  padding:5px;
+}
+.planner h3{
+  color:gray;
+  padding:3px;
+  font-size:23px;
+}
+/*
 .table{
   display:flex;
   justify-content: space-around;
@@ -60,7 +48,7 @@
 padding: 10px;
 margin: 10px;
 top: 100px;
-left: 70%;
+left: 60%;
 
 }
 li {
@@ -84,16 +72,6 @@ margin: 10px;
 top: 100px;
 left: 70%;
 }
+*/
 
 
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
