@@ -2,7 +2,7 @@ import Table from "react-bootstrap/Table";
 import React from "react";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Button, Col} from "react-bootstrap";
+import {Button, Col,Row} from "react-bootstrap";
 import {Course} from "../interfaces/courses";
 import COURSES from "../assets/courses.json";
 
@@ -13,10 +13,50 @@ export function Tab({setCourse}:{setCourse:(c:Course)=>void}): JSX.Element {
 
     return <Col className="planner" xs={7}>
         <h2>CISC PLANNER</h2>
-        {setCourse}
-        <Button onClick={
-            ()=>setCourse(COURSES[1] as Course)
-        }><IoRemoveCircleOutline /></Button>
+        <Row>
+            <Col></Col>
+            <Col><h3>Spring</h3></Col>
+            <Col><h3>Fall</h3></Col>
+        </Row>  
+        <Row>
+            <Col>FRESHMAN</Col>
+            <Col>
+                <div>
+                    {setCourse}
+                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
+                    CISC{setCourse}: {setCourse}
+                </div>
+                <div>
+                    {setCourse}
+                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
+                    CISC{setCourse}: {setCourse}
+                </div>
+            </Col>
+            <Col>
+                <div>
+                    {setCourse}
+                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
+                    CISC{setCourse}: {setCourse}
+                </div>
+            </Col>
+        </Row>
+        <Row>
+            <Col>SOPHOMORE</Col>
+            <Col>
+                <div>
+                    {setCourse}
+                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
+                    CISC{setCourse}: {setCourse}
+                </div>
+            </Col>
+            <Col>
+                <div>
+                    {setCourse}
+                    <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button>
+                    CISC{setCourse}: {setCourse}
+                </div>
+            </Col>
+        </Row>
     </Col>;
 
     /*<Table responsive="sm">
