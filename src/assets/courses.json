@@ -49,6 +49,13 @@
       "Description": "Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay."
     },
     {
+      "ID": 242,
+      "Name": "ANALYTIC GEOMETRY & CALCULUS B",
+      "Kind": "Required",
+      "Prereq": "MATH241",
+      "Description": "Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay."
+    },
+    {
       "ID": 320,
       "Name": "Introduction to Algorithms",
       "Kind": "Electives",
