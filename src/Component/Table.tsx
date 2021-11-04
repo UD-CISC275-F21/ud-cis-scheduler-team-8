@@ -6,7 +6,7 @@ import {Button, Col} from "react-bootstrap";
 import {Course} from "../interfaces/courses";
 import COURSES from "../assets/courses.json";
 
-export function Tab({setCourse,course}:{setCourse:(c:Course)=>void,course:Course}): JSX.Element {
+export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JSX.Element {
     return <Col className="planner">
         <h2>CISC PLANNER</h2>
         <Table className="freshman">
