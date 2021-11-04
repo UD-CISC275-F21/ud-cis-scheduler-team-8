@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Button, Col, Modal } from "react-bootstrap";
 import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
+import { EditableCourseItem } from "./EDitableCourseItem";
 
 
 export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
@@ -21,7 +22,7 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
         return <div key={course.ID}>
             <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
                 CISC{course.ID}: {course.Name.toUpperCase()}
-                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
+                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course = {course}/>
             </div>
 
             <Modal show={show} onHide={handleClose}>
