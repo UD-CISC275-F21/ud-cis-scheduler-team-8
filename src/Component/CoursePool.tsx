@@ -13,19 +13,14 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    //const [ActiveCourse, SetActiveCourse] = useState();
 
+    const [ActiveCourse, SetActiveCourse] = useState();
 
-    //let course_numbers = [0, 1, 2, 3, 4, 5];
-    /*let course_Item = <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
-        CISC{pool[0].ID}: {pool[0].Name}
-        <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
-    </div>;*/
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
         return <div key={course.ID}>
             <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
-                CISC{course.ID}: {course.Name}
+                CISC{course.ID}: {course.Name.toUpperCase()}
                 <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
             </div>
 
