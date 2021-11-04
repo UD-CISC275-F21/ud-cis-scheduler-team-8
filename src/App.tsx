@@ -5,28 +5,31 @@ import CoursePool from "./Component/CoursePool";
 import Header from "./Header";
 import COURSES from "./assets/courses.json";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Container,Row} from "react-bootstrap";
-import {Course} from "./interfaces/courses";
 
-
-
+import { Container, Row } from "react-bootstrap";
+import { Course } from "./interfaces/courses";
 
 function App(): JSX.Element {
-    const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
+    
+
+    
+    //const [schedule,setSchedule]=useState <Course[]>([]);
+    const [pool,]=useState<Course[]>(COURSES);
+    const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0] as Course);
     /*const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0] as Course);
     const [deck, setDeck] = useState<Course[]>(COURSES);*/
     return (
-        <Container className="App"> 
+        <Container className="App">
             <Row>
-                <Header/>
+                <Header />
             </Row>
             <Row>
-                <Tab 
-                    setCourse={SetActiveCourse} 
+                <Tab
+                    setCourse={SetActiveCourse}
                     course={ActiveCourse}></Tab>
-                <CoursePool course={ActiveCourse}></CoursePool>
+                <CoursePool pool={pool}></CoursePool>
             </Row>
-            
+
         </Container>
 
     );

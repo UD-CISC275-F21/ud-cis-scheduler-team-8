@@ -1,40 +1,58 @@
 import React, { useState } from "react";
 import "../App.css";
-import {Course} from "../interfaces/courses";
+import { Course } from "../interfaces/courses";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Button, Col, Modal} from "react-bootstrap";
-import { IoIosMore,IoIosAddCircleOutline } from "react-icons/io";
+
+//import { propTypes } from "react-bootstrap/esm/Image";
+
+import { Button, Col, Modal } from "react-bootstrap";
+import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 
 
-export function CoursePool({course}:{course:Course}): JSX.Element {
+export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
+
+    //const [ActiveCourse, SetActiveCourse] = useState();
+
+
+    const courseItems = pool.map(function (course: Course): JSX.Element {
+        return <div key={course.ID}>
+            <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
+                CISC{course.ID}: {course.Name.toUpperCase()}
+                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
+            </div>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        <strong>CISC{course.ID}: {course.Name}</strong>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {course.Description}
+                </Modal.Body>
+            </Modal>
+
+
+        </div>;
+
+    });
+
+
+
+
+
+
+
     return <Col className="pool">
         <h2>Course Pool</h2>
-        <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
-            CISC{course.ID}: {course.Name}
-            <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
-        </div>
-        <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
-            CISC{course.ID}: {course.Name}
-            <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button>
-        </div>
+        {courseItems}
 
-        
-        
-        
-        <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>
-                    <strong>CISC{course.ID}: {course.Name}</strong>
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                {course.Description}
-            </Modal.Body>
-        </Modal>
+
+
+
 
 
     </Col>;
@@ -42,6 +60,20 @@ export function CoursePool({course}:{course:Course}): JSX.Element {
 
 
 /*
+
+ <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>
+                    <strong>CISC{pool[0].ID}: {pool[0].Name}</strong>
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                {pool[0].Description}
+            </Modal.Body>
+        </Modal>
+
+
+
 function Course_pull(): JSX.Element {
     return (
 
@@ -98,9 +130,13 @@ function Course_pull(): JSX.Element {
     List_of_Classes[8] = [242, " Calculus 2"];
     const list: JSX.Element[] = [];
 
+
+
+
+
     for (let i = 0; i < 9; i++) {
         const box =
-            <div key={i} className="item">
+            <div key={i} className="item" onClick={() => Fire_item(i)}>
                 <li >Course ID:_ </li>
                 <div>{List_of_Classes[i][0]}</div>
                 {/*List_of_Classes[i]}
@@ -109,9 +145,21 @@ function Course_pull(): JSX.Element {
             </div>;
         list[i] = box;
     }
+
+
+    function Fire_item(id: number) {
+        props.clickHandler(id);
+
+
+
+
+    }
+
+
     return <div className="course_Pool"> {list}</div>;
 }
 */
+
 
 
 export default CoursePool;
