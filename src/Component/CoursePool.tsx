@@ -14,7 +14,7 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [ActiveCourse, SetActiveCourse] = useState();
+    //const [ActiveCourse, SetActiveCourse] = useState();
 
 
     const courseItems = pool.map(function (course: Course): JSX.Element {

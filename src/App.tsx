@@ -14,7 +14,7 @@ function App(): JSX.Element {
 
     
     //const [schedule,setSchedule]=useState <Course[]>([]);
-    const [pool,SetPool]=useState<Course[]>(COURSES);
+    const [pool,]=useState<Course[]>(COURSES);
     const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0] as Course);
     /*const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0] as Course);
     const [deck, setDeck] = useState<Course[]>(COURSES);*/
