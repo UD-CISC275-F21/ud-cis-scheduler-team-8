@@ -22,7 +22,7 @@ export function EditableCourseItem ({course}: {course: Course}) {
             </ButtonGroup>
         </div> :
         <div>
-            {course.ID} {course.Name};
+            {/*course.ID*/} {/*course.Name*/}
 
             <ButtonGroup>
                 <ToggleButton variant= "primary" checked = {editing} value = "1"
