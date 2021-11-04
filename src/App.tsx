@@ -12,7 +12,10 @@ import {Course} from "./interfaces/courses";
 
 
 function App(): JSX.Element {
+    const initialList=COURSES;
     const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
+    const [list, setList] = useState<Course[]>(COURSES);
+    
     /*const [currentCourse, setCurrentCourse] = useState<Course>(COURSES[0] as Course);
     const [deck, setDeck] = useState<Course[]>(COURSES);*/
     return (
@@ -23,7 +26,8 @@ function App(): JSX.Element {
             <Row>
                 <Tab 
                     setCourse={SetActiveCourse} 
-                    course={ActiveCourse}></Tab>
+                    course={ActiveCourse} 
+                    list={list}></Tab>
                 <CoursePool course={ActiveCourse}></CoursePool>
             </Row>
             
