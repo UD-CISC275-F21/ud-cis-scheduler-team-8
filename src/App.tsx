@@ -9,19 +9,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import { Course } from "./interfaces/courses";
 
-    const initialList=COURSES;
+function App(): JSX.Element {
+
+    const [pool]=useState <Course[]>(COURSES); 
     const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
+
     return (
         <Container className="App">
             <Row>
                 <Header />
             </Row>
             <Row>
-                <Tab 
-                    setCourse={SetActiveCourse} 
-                    course={ActiveCourse} 
-                    list={list}></Tab>
-                <CoursePool course={ActiveCourse}></CoursePool>
                 <Tab
                     setCourse={SetActiveCourse}
                     course={ActiveCourse}></Tab>
