@@ -21,7 +21,7 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
     const courseItems = pool.map(function (course: Course): JSX.Element {
         return <div key={course.ID}>
             <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
-                CISC{course.ID}: {course.Name.toUpperCase()}
+                {course.Name.toUpperCase()}
                 <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course = {course}/>
             </div>
 

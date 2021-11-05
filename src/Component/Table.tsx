@@ -6,7 +6,8 @@ import {Button, Col} from "react-bootstrap";
 import {Course} from "../interfaces/courses";
 import COURSES from "../assets/courses.json";
 
-export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JSX.Element {
+export function Tab({setCourse,schedule,setSchedule}:
+    {setCourse:(c:Course)=>void, schedule:Course[], setSchedule:(s:Course[])=>void, course:Course}): JSX.Element {
     return <Col className="planner">
         <h2>CISC PLANNER</h2>
         <Table className="freshman">
@@ -17,19 +18,19 @@ export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JS
             </thead>
             <tbody>
                 <tr>
-                    <td>Fall</td>
-                    <td>Spring</td></tr>
+                    <td>Fall <Button onClick={() => setSchedule([])}>Clear</Button></td>
+                    <td>Spring <Button>Clear</Button></td></tr>
                 <tr>
-                    <td>CISC{COURSES[0].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>CISC{COURSES[1].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[0].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline onClick={() => setSchedule([])}/></Button></td> 
+                    <td>{schedule[1].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>MATH{COURSES[6].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>MATH{COURSES[7].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[6].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[7].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>ENGL110 <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                    <td>CISC{COURSES[2].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
+                    <td>{schedule[13].Name}<Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
+                    <td>{schedule[2].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
                 </tr>
             </tbody>
         </Table>
@@ -44,16 +45,16 @@ export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JS
                     <td>Fall</td>
                     <td>Spring</td></tr>
                 <tr>
-                    <td>CISC{COURSES[3].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>CISC{COURSES[5].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[3].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[5].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>CISC{COURSES[4].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>CISC{COURSES[8].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[4].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[8].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
                     <td> <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                    <td>CISC{COURSES[9].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
+                    <td>{schedule[9].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
                 </tr>
             </tbody>
         </Table>
@@ -68,11 +69,11 @@ export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JS
                     <td>Fall</td>
                     <td>Spring</td></tr>
                 <tr>
-                    <td>CISC{COURSES[10].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>CISC{COURSES[11].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[10].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[11].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>CISC{COURSES[12].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[12].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                     <td> <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
@@ -92,16 +93,16 @@ export function Tab({setCourse,}:{setCourse:(c:Course)=>void,course:Course}): JS
                     <td>Fall</td>
                     <td>Spring</td></tr>
                 <tr>
-                    <td>CISC{COURSES[0].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>CISC{COURSES[1].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[0].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[1].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>MATH{COURSES[6].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
-                    <td>MATH{COURSES[7].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[6].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
+                    <td>{schedule[7].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td> 
                 </tr>
                 <tr>
-                    <td>ENGL110 <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                    <td>CISC{COURSES[2].ID} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
+                    <td>{schedule[13].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
+                    <td>{schedule[2].Name} <Button variant="transparent" onClick={()=>setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
                 </tr>
             </tbody>
         </Table>
