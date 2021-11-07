@@ -11,7 +11,7 @@ import { Course } from "./interfaces/courses";
 
 function App(): JSX.Element {
 
-    const [pool]=useState <Course[]>(COURSES); 
+    const [pool, setPool]=useState <Course[]>(COURSES); 
     const [schedule,setSchedule] = useState <Course[]>(COURSES);
     const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
 
@@ -26,7 +26,7 @@ function App(): JSX.Element {
                     setSchedule={setSchedule}
                     setCourse={SetActiveCourse}
                     course={ActiveCourse}></Tab>
-                <CoursePool pool={pool}></CoursePool>
+                <CoursePool pool={pool} setPool={setPool}></CoursePool>
             </Row>
 
         </Container>
