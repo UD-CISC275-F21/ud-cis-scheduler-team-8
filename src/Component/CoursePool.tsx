@@ -10,7 +10,8 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
+export function CoursePool({ pool, setPool }: 
+    { pool: Course[] , setPool: (newpool: Course[])=>void}): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -22,7 +23,7 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
         return <div key={course.ID}>
             <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
                 {course.Name.toUpperCase()}
-                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course = {course}/>
+                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course = {course} setPool = {setPool} pool = {pool}/>
             </div>
 
             <Modal show={show} onHide={handleClose}>
@@ -44,15 +45,9 @@ export function CoursePool({ pool }: { pool: Course[] }): JSX.Element {
 
 
 
-
-
-
     return <Col className="pool">
         <h2>Course Pool</h2>
         {courseItems}
-
-
-
 
 
 
