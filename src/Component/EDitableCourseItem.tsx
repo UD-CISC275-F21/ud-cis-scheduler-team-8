@@ -3,7 +3,7 @@ import { Course } from "../interfaces/courses";
 import { ToggleButton, ButtonGroup, Form, Button } from "react-bootstrap";
 
 export function EditableCourseItem ({course, pool, setPool}: 
-    {course: Course, pool: Course[], setPool: (pool: Course[])=>void}) {
+    {course: Course, pool: Course[], setPool: (pool: Course[])=>void}):JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
     const [newDescription, setNewDescription] = useState<string>(course.Description);
     // onChange={(ev: React.ChangeEvent<HTMLTextAreaElement>) => setQuestion(ev.target.value)}
