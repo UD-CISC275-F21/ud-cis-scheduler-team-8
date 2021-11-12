@@ -6,9 +6,9 @@ import {Button, Col} from "react-bootstrap";
 import {/**Course,*/ Semester} from "../interfaces/courses";
 //import COURSES from "../assets/courses.json";
 
-export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters/**,setSemesters*/}:
+export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSemesters}:
     {/**setCourse:(c:Course)=>void, schedule:Course[], setSchedule:(s:Course[])=>void, course:Course,*/
-    semesters:Semester[]/**,setSemesters:(se:Semester[])=>void */}): JSX.Element {
+    semesters:Semester[],setSemesters:(se:Semester[])=>void }): JSX.Element {
 
 
 
@@ -27,7 +27,7 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters/**,set
                     <tr>
                         <td>{coursename.toUpperCase()}
                             <IoRemoveCircleOutline onClick = {()=>{
-                                //deleteButton();
+                                () => setSemesters([]);
                             }}/></td>
                         <td>{coursename.toUpperCase()}
                             <IoRemoveCircleOutline onClick = {()=>{

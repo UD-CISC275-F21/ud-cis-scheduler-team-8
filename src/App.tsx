@@ -11,8 +11,8 @@ import { Course, Semester } from "./interfaces/courses";
 function App(): JSX.Element {
 
     const [pool, setPool]=useState <Course[]>(COURSES); 
-    const [schedule,setSchedule] = useState <Course[]>(COURSES);
-    const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
+    //const [schedule,setSchedule] = useState <Course[]>(COURSES);
+    //const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
     const [semesters, setSemesters] = useState<Semester[]>([]);
 
     return (
@@ -27,7 +27,7 @@ function App(): JSX.Element {
                     setCourse={SetActiveCourse}
                     course={ActiveCourse}*/
                     semesters={semesters}
-                    /**setSemesters={setSemesters}*/></Tab>
+                    setSemesters={setSemesters}></Tab>
                 <CoursePool pool={pool} setPool={setPool}></CoursePool>
             </Row>
 
