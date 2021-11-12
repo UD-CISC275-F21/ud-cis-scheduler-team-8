@@ -6,3 +6,7 @@ export interface Course{
     Prereq: string;
     Description: string;
 }
+
+export interface Semester {
+    courses: Course[];
+  }
