@@ -22,12 +22,12 @@ function App(): JSX.Element {
             </Row>
             <Row>
                 <Tab
-                    schedule={schedule}
+                    /**schedule={schedule}
                     setSchedule={setSchedule}
                     setCourse={SetActiveCourse}
-                    course={ActiveCourse}
+                    course={ActiveCourse}*/
                     semesters={semesters}
-                    setSemesters={setSemesters}></Tab>
+                    /**setSemesters={setSemesters}*/></Tab>
                 <CoursePool pool={pool} setPool={setPool}></CoursePool>
             </Row>
 
