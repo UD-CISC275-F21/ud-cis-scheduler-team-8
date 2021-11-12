@@ -10,24 +10,45 @@ export function Tab({ setCourse, schedule, setSchedule }:
     { setCourse: (c: Course) => void, schedule: Course[], setSchedule: (s: Course[]) => void, course: Course }): JSX.Element {
 
 
+
+    function remove(index:number,course:Course){
+        const emptyCourse={
+            "ID": 0,
+            "Name": "",
+            "Kind": "",
+            "Prereq": "",
+            "Description": ""
+        };
+        const newschedule=schedule;
+        //newschedule.splice(index,1,emptyCourse);
+        schedule[index].Name="";
+        schedule[index].ID=0;
+        schedule[index].Kind="";
+        schedule[index].Prereq="";
+        schedule[index].Description="";
+        console.log(schedule);
+        setSchedule(schedule);
+    }
+
     function PigionHoleCourses(schedule: Course[]): JSX.Element {
-        const stuff: (JSX.Element)[] = [];
+        const row: (JSX.Element)[] = [];
+        
         for (let i = 0; i < (schedule.length/2)-1; i+=2) {
-            console.log(schedule[i].Name);
+            //console.log(schedule[i].Name);
             const x = <tr>
 
                 <td>{schedule[i].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}
-                ><IoRemoveCircleOutline onClick={() => setSchedule([])} /></Button></td>
+                ><IoRemoveCircleOutline onClick={() => remove(i,schedule[i])} /></Button></td>
 
-                <td>{schedule[i + 1].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}
-                ><IoRemoveCircleOutline onClick={() => setSchedule([])} /></Button></td>
+                <td>{schedule[i+1].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}
+                ><IoRemoveCircleOutline onClick={() => remove(i+1,schedule[i+1])} /></Button></td>
 
             </tr>;
-            stuff[i] = x;
+            row[i] = x;
         }
 
 
-        return <>{stuff}</>;
+        return <>{row}</>;
     }
 
 
@@ -44,14 +65,7 @@ export function Tab({ setCourse, schedule, setSchedule }:
                     <td>Fall <Button onClick={() => setSchedule([])}>Clear</Button></td>
                     <td>Spring <Button>Clear</Button></td></tr>
                 {PigionHoleCourses(schedule)}
-                <tr>
-                    <td>{schedule[6].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                    <td>{schedule[7].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                </tr>
-                <tr>
-                    <td>{schedule[13].Name}<Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                    <td>{schedule[2].Name} <Button variant="transparent" onClick={() => setCourse(COURSES[1] as Course)}><IoRemoveCircleOutline /></Button></td>
-                </tr>
+               
             </tbody>
 
         </Table>
