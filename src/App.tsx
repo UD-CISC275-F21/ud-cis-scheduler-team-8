@@ -13,7 +13,15 @@ function App(): JSX.Element {
     const [pool, setPool]=useState <Course[]>(COURSES); 
     //const [schedule,setSchedule] = useState <Course[]>(COURSES);
     //const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
-    const [semesters, setSemesters] = useState<Semester[]>([]);
+    const [semesters, setSemesters] = useState<Semester[]> ([]);
+    
+        function buildSemesters(){
+            
+            
+            
+        }
+
+
 
     return (
         <Container className="App">

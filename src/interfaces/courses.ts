@@ -1,3 +1,5 @@
+export type Season="Fall"|"Spring";
+
 
 export interface Course{
     ID: number;
@@ -8,5 +10,8 @@ export interface Course{
 }
 
 export interface Semester {
+    ID:number;
     courses: Course[];
+    Season:string
+
   }
