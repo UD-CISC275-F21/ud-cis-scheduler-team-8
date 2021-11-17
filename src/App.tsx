@@ -10,19 +10,12 @@ import { Course, Semester } from "./interfaces/courses";
 
 function App(): JSX.Element {
 
-    const [pool, setPool]=useState <Course[]>(COURSES); 
+    const [pool, setPool] = useState<Course[]>(COURSES);
     //const [schedule,setSchedule] = useState <Course[]>(COURSES);
     //const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
-    const [semesters, setSemesters] = useState<Semester[]> ([]);
-    
-        function buildSemesters(){
-            
-            
-            
-        }
+    const [semesters, setSemesters] = useState<Semester[]>([]);
 
-
-
+   
     return (
         <Container className="App">
             <Row>
