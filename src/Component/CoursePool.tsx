@@ -10,8 +10,9 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool, setPool}: 
-    { pool: Course[] , setPool: (newpool: Course[])=>void}): JSX.Element {
+export function CoursePool({ pool, setPool,semesters, setSemesters}: 
+    { pool: Course[] , setPool: (newpool: Course[])=>void} , semesters: Semester[],
+    setSemesters:(schedule:Semester[])=> void): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

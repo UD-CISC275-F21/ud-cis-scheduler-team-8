@@ -29,7 +29,7 @@ function App(): JSX.Element {
                     course={ActiveCourse}*/
                     semesters={semesters}
                     setSemesters={setSemesters}></Tab>
-                <CoursePool pool={pool} setPool={setPool}></CoursePool>
+                <CoursePool pool={pool} setPool={setPool} semesters={semesters} setSemesters={setSemesters}  ></CoursePool>
             </Row>
 
         </Container>
