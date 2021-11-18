@@ -7,6 +7,7 @@ import COURSES from "./assets/courses.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import { Course, Semester } from "./interfaces/courses";
+import { Popup } from "./Component/Usermessage";
 
 function App(): JSX.Element {
 
@@ -19,6 +20,7 @@ function App(): JSX.Element {
         <Container className="App">
             <Row>
                 <Header />
+                <Popup />
             </Row>
             <Row>
                 <Tab
