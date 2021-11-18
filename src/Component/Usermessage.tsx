@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-export function Popup() {
+export function Popup(): JSX.Element{
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
