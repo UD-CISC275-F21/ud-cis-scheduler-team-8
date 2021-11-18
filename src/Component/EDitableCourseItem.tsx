@@ -55,7 +55,7 @@ export function EditableCourseItem ({course, pool, setPool}:
             <Button variant= "warning" onClick = {()=>{
                 resetEditableReigon();
                 setEditing(false);
-            }}>Cancle</Button>
+            }}>Cancel</Button>
 
             <Button variant= "danger" onClick = {()=>{
                 deleteButton();
