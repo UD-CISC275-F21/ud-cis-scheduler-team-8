@@ -46,7 +46,7 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
             return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
                 <thead> 
                     <tr>
-                        <td>Semester {semester.semesternumber} <IoRemoveCircleOutline onClick= {()=>{
+                        <td>Semester {semester.semesternumber} <Button>Clear</Button><IoRemoveCircleOutline onClick= {()=>{
                             removeSemester(semester.semesternumber);
                         }}/></td>;
                     </tr>
