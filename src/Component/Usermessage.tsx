@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { JsxEmit } from "typescript";
 
 export function Popup() :JSX.Element{
     const [show, setShow] = useState(false);
