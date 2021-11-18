@@ -15,11 +15,12 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSe
     const semesterItems = semesters.map(function (semester: Semester): JSX.Element {
         let courseid= semester.courses[0].ID;
         let coursename= semester.courses[0].Name;
-        for (let i = 0; i < 14; i++) {
+        //console.log( semester.courses.length);
+        for (let i = 0; i < semester.courses.length; i++) {
             courseid = semester.courses[i].ID;
-            console.log(courseid);
+            //console.log(courseid);
             coursename= semester.courses[i].Name;
-            console.log(coursename);
+            //console.log(coursename);
         }
         return <div key={courseid}>
             <div>
@@ -29,10 +30,10 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSe
                             <IoRemoveCircleOutline onClick = {()=>{
                                 () => setSemesters([]);
                             }}/></td>
-                        <td>{coursename.toUpperCase()}
+                        {/* <td>{coursename.toUpperCase()}
                             <IoRemoveCircleOutline onClick = {()=>{
                                 //deleteButton();
-                            }}/></td>
+                            }}/></td>*/}
                     </tr>
                 </Table>
             </div>
