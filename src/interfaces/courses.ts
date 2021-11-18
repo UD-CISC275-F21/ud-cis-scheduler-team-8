@@ -10,6 +10,7 @@ export interface Course{
 }
 
 export interface Semester {
+    
     ID:number;
     Full:boolean;
     courses: Course[];
