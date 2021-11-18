@@ -1,3 +1,5 @@
+export type Season="Fall"|"Spring";
+
 
 export interface Course{
     ID: number;
@@ -8,7 +10,13 @@ export interface Course{
 }
 
 export interface Semester {
-    semesternumber: number;
+    
+    ID:number;
+    Full:boolean;
     courses: Course[];
-  }
+    Season:string
+   
 
+    
+
+  }

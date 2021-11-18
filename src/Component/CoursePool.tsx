@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Course } from "../interfaces/courses";
+import { Course, Semester } from "../interfaces/courses";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //import { propTypes } from "react-bootstrap/esm/Image";
@@ -10,20 +10,93 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool, setPool }: 
-    { pool: Course[] , setPool: (newpool: Course[])=>void}): JSX.Element {
+export function CoursePool({ pool, setPool, semesters, setSemesters }: {
+    pool: Course[], setPool: (newpool: Course[]) => void,
+    semesters: Semester[], setSemesters: (schedule: Semester[]) => void
+}): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    //LOC(list of cources)
+
+    function ReturnLastSemesterIndex() {
+        let currentindexcount=0;
+        for (let i = 0; i < semesters.length; i++) {
+            
+            if (semesters[i].Full == true) {
+                console.log(i);
+                currentindexcount+=1;
+            }
+        }
+        return currentindexcount;
+    }
+
+
+
+    function PushCourseToSchedule(course: Course) {
+        if (semesters.length === 0) {
+            const newSemester: Semester = {
+                ID: 2020,
+                Full: false,
+                courses: [course],
+                Season: "Fall"
+            };
+            const modifiedList = [...semesters];
+
+            modifiedList[0] = newSemester;
+            setSemesters(modifiedList);
+            //setSemesters([newSemester]);
+            console.log(semesters);
+            //const modifiedList = semesters.map((semester, index,) => index === 0 ? newSemester : semester)
+            //setSemesters([semesters[0],newSemester]);
+        } else if (semesters[ReturnLastSemesterIndex()].courses.length <= 5) {
+            const Semesterindex = semesters.length - 1;
+            //console.log(Semesterindex);
+            const oldSemesterID = semesters[semesters.length - 1].ID;
+            let oldSemesterFull = semesters[semesters.length - 1].Full;
+            const oldSemesterSeason = semesters[semesters.length - 1].Season;
+            const courses = [...semesters[semesters.length - 1].courses];
+            if (semesters[Semesterindex].courses.length === 5) {
+                oldSemesterFull = true;
+            }
+            
+            courses.push(course);
+            const newSemester: Semester = {
+                ID: oldSemesterID,
+                Full: oldSemesterFull,
+                courses: courses,
+                Season: oldSemesterSeason
+            };
+            //console.log("else");
+            //const modifiedList = semesters.map((item, index) => index === 0 ? newSemester : item);
+            const modifiedList = [...semesters];
+            modifiedList[Semesterindex] = newSemester;
+
+            setSemesters(modifiedList);
+
+            //console.log(semesters);
+
+        }
+
+        
+
+        //setSchedule([...schedule, course]);
+        //console.log(schedule);
+
+    }
+
+
+
+
 
     //const [ActiveCourse, SetActiveCourse] = useState();
 
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
         return <div key={course.ID}>
-            <div><Button variant="tansparant" onClick={handleShow}><IoIosAddCircleOutline /></Button>
+            <div><Button variant="tansparant" onClick={() => PushCourseToSchedule(course)}><IoIosAddCircleOutline /></Button>
                 {course.Name.toUpperCase()}
-                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course = {course} setPool = {setPool} pool = {pool}/>
+                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course={course} setPool={setPool} pool={pool} />
             </div>
 
             <Modal show={show} onHide={handleClose}>
