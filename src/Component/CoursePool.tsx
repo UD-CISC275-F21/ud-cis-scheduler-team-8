@@ -36,6 +36,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
     function PushCourseToSchedule(course: Course) {
         if (semesters.length === 0) {
             const newSemester: Semester = {
+                semesternumber:1,
                 ID: 2020,
                 Full: false,
                 courses: [course],
@@ -62,6 +63,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             
             courses.push(course);
             const newSemester: Semester = {
+                semesternumber:1,
                 ID: oldSemesterID,
                 Full: oldSemesterFull,
                 courses: courses,
