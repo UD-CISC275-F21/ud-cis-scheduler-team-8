@@ -8,5 +8,7 @@ export interface Course{
 }
 
 export interface Semester {
+    semesternumber: number;
     courses: Course[];
   }
+

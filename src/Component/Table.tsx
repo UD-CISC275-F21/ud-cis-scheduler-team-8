@@ -2,50 +2,78 @@ import Table from "react-bootstrap/Table";
 import React from "react";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Button, Col} from "react-bootstrap";
-import {/**Course,*/ Semester} from "../interfaces/courses";
+import { Button} from "react-bootstrap";
+import {Course, Semester } from "../interfaces/courses";
+//import { countReset } from "console";
+import {SemesterControl} from "./SemesterControl";
 //import COURSES from "../assets/courses.json";
 
-export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSemesters}:
+
+export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setSemesters}:
     {/**setCourse:(c:Course)=>void, schedule:Course[], setSchedule:(s:Course[])=>void, course:Course,*/
-    semesters:Semester[],setSemesters:(se:Semester[])=>void }): JSX.Element {
+    semesters: Semester[], setSemesters: (s : Semester[])=>void
+    }): JSX.Element {
 
+    
+    function removeSemester(semesternum: number){
+        setSemesters(semesters.filter((oldSemester: Semester): boolean => {
+            return semesternum !== oldSemester.semesternumber;
+        }));
+    }
 
+    // function removeCourse(senumber: number, coursename: string){
+    //     setSemesters(semester.map((semester: Semester)=>{
+    //         semester.courses.filter((oldSemester: Semester): boolean => {
+    //         return coursename !== oldSemester.courses.Name;
+    //     }));
+    // }
+    function removeCourse(senumber: number, coursename: string){
+        setSemesters(semesters.map((semester: Semester)=>{
+            if (senumber !== semester.semesternumber){
+                return semester;
+            }else{
+                return {...semester, courses: semester.courses.filter((oldCourse: Course): boolean=>{
+                    return coursename !== oldCourse.Name;
+                })};
+            }
+        }));
+    }
 
-    const semesterItems = semesters.map(function (semester: Semester): JSX.Element {
-        let courseid= semester.courses[0].ID;
-        let coursename= semester.courses[0].Name;
-        for (let i = 0; i < 14; i++) {
-            courseid = semester.courses[i].ID;
-            console.log(courseid);
-            coursename= semester.courses[i].Name;
-            console.log(coursename);
-        }
-        return <div key={courseid}>
-            <div>
-                <Table className="freshman">
+    
+    return <div className = "classtable">
+        <SemesterControl semesters={semesters} setSemesters= {setSemesters}/>
+        {semesters.map((semester: Semester) =>{ 
+            return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
+                <thead> 
                     <tr>
-                        <td>{coursename.toUpperCase()}
-                            <IoRemoveCircleOutline onClick = {()=>{
-                                () => setSemesters([]);
-                            }}/></td>
-                        <td>{coursename.toUpperCase()}
-                            <IoRemoveCircleOutline onClick = {()=>{
-                                //deleteButton();
-                            }}/></td>
+                        <td>Semester {semester.semesternumber} <IoRemoveCircleOutline onClick= {()=>{
+                            removeSemester(semester.semesternumber);
+                        }}/></td>;
                     </tr>
-                </Table>
-            </div>
-        </div>;
-    });
+                </thead> 
+                <tbody>
+                    <tr>
+                        {semester.courses.map((course: Course, index: number) =>{
+                            return <td key = {index}>{course.Name} <IoRemoveCircleOutline onClick= {()=>{
+                                removeCourse(semester.semesternumber, course.Name);
+                            }}/></td>;
+                        })};
+                    </tr>
+                </tbody>
+            </Table>;
+        })};
+    </div>;
+}
 
-    /**function deleteButton(): void{
+export default Tab;
+    
+/**function deleteButton(): void{
         setSemesters(semesters.filter((oldSemester: Semester): boolean => {
             return semesters.courses !== oldSemester.courses;
         }));
     }*/
 
-    return <Col className="pool">
+/*return <Col className="pool">
         <h2>Schedule</h2>
         <thead>
             <tr>
@@ -59,11 +87,12 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSe
             </tr>
             {semesterItems}
         </tbody>
-    </Col>;
-
-
+    </Col>;*/
     
-    /**return <Col className="planner">
+
+
+
+/**return <Col className="planner">
         <h2>CISC PLANNER</h2>
         <Table className="freshman">
             <thead>
@@ -163,9 +192,3 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/semesters, setSe
         </Table>
     </Col>;
     */
-
-
-} 
-
-
-export default Tab;
