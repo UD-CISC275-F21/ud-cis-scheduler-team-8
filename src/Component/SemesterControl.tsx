@@ -58,9 +58,9 @@ export function SemesterControl ({semesters, setSemesters}:
     }
 
     
-    /*function resetAllSemester(){
-
-    }*/
+    function resetAllSemester(){
+        setSemesters([]);
+    }
     
     
     return <Col>
@@ -74,8 +74,8 @@ export function SemesterControl ({semesters, setSemesters}:
             save();
         }}>Save</Button>
 
-        {/*<Button onClick= {()=>{
+        {<Button onClick= {()=>{
             resetAllSemester();
-        }}>Reset All Semester</Button>*/}
+        }}>Reset All Semester</Button>}
     </Col>;
 }
