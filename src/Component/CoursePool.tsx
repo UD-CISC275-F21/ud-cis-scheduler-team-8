@@ -24,7 +24,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
         for (let i = 0; i < semesters.length; i++) {
 
             if (semesters[i].Full == true) {
-                console.log(i);
+                //console.log(i);
                 currentindexcount += 1;
             }
         }
@@ -52,7 +52,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             //setSemesters([semesters[0],newSemester]);
         } else if (semesters[ReturnLastSemesterIndex()].courses.length <= 5) {
             const Semesterindex = semesters.length - 1;
-            //console.log(Semesterindex);
+            //console.log(semesters[ReturnLastSemesterIndex()].courses.length);
             const oldSemesterID = semesters[semesters.length - 1].ID;
             let oldSemesterFull = semesters[semesters.length - 1].Full;
             const oldSemesterSeason = semesters[semesters.length - 1].Season;
@@ -63,7 +63,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
 
             courses.push(course);
             const newSemester: Semester = {
-                semesternumber: 1,
+                semesternumber: semesters[semesters.length - 1].semesternumber,
                 ID: oldSemesterID,
                 Full: oldSemesterFull,
                 courses: courses,
