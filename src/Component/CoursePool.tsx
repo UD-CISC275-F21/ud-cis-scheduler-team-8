@@ -64,7 +64,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
 
             courses.push(course);
             const newSemester: Semester = {
-                semesternumber:semesters[semesters.length - 1].semesternumbe,
+                semesternumber:semesters[semesters.length - 1].semesternumber,
                 id: oldSemesterID,
                 full: oldSemesterFull,
                 courses: courses,
