@@ -39,7 +39,6 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
         }));
     }
 
-
     
     return <div className = "classtable">
         <SemesterControl semesters={semesters} setSemesters= {setSemesters}/>
@@ -59,7 +58,6 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
                                 removeCourse(semester.semesternumber, course.Name);
                             }}/></td>;
                         })};
-
                     </tr>
                 </tbody>
             </Table>;
