@@ -20,12 +20,12 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
     //LOC(list of cources)
 
     function ReturnLastSemesterIndex() {
-        let currentindexcount=0;
+        let currentindexcount = 0;
         for (let i = 0; i < semesters.length; i++) {
-            
+
             if (semesters[i].Full == true) {
                 console.log(i);
-                currentindexcount+=1;
+                currentindexcount += 1;
             }
         }
         return currentindexcount;
@@ -36,7 +36,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
     function PushCourseToSchedule(course: Course) {
         if (semesters.length === 0) {
             const newSemester: Semester = {
-                semesternumber:1,
+                semesternumber: 1,
                 ID: 2020,
                 Full: false,
                 courses: [course],
@@ -60,10 +60,10 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             if (semesters[Semesterindex].courses.length === 5) {
                 oldSemesterFull = true;
             }
-            
+
             courses.push(course);
             const newSemester: Semester = {
-                semesternumber:1,
+                semesternumber: 1,
                 ID: oldSemesterID,
                 Full: oldSemesterFull,
                 courses: courses,
@@ -80,7 +80,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
 
         }
 
-        
+
 
         //setSchedule([...schedule, course]);
         //console.log(schedule);
