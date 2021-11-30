@@ -70,7 +70,7 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
                     </tr>
                 </tbody>
             </Table>;
-        })};
+        })}
     </div>;
 }
 
