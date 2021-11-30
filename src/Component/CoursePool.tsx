@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Course, Semester } from "../interfaces/courses";
+import { Course } from "../interfaces/courses";
+import { Semester } from "../interfaces/semester";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //import { propTypes } from "react-bootstrap/esm/Image";
@@ -23,7 +24,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
         let currentindexcount=0;
         for (let i = 0; i < semesters.length; i++) {
             
-            if (semesters[i].Full == true) {
+            if (semesters[i].full == true) {
                 console.log(i);
                 currentindexcount+=1;
             }
@@ -37,10 +38,10 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
         if (semesters.length === 0) {
             const newSemester: Semester = {
                 semesternumber:1,
-                ID: 2020,
-                Full: false,
+                id: 2020,
+                full: false,
                 courses: [course],
-                Season: "Fall"
+                season: "Fall"
             };
             const modifiedList = [...semesters];
 
@@ -53,9 +54,9 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
         } else if (semesters[ReturnLastSemesterIndex()].courses.length <= 5) {
             const Semesterindex = semesters.length - 1;
             //console.log(Semesterindex);
-            const oldSemesterID = semesters[semesters.length - 1].ID;
-            let oldSemesterFull = semesters[semesters.length - 1].Full;
-            const oldSemesterSeason = semesters[semesters.length - 1].Season;
+            const oldSemesterID = semesters[semesters.length - 1].id;
+            let oldSemesterFull = semesters[semesters.length - 1].full;
+            const oldSemesterSeason = semesters[semesters.length - 1].season;
             const courses = [...semesters[semesters.length - 1].courses];
             if (semesters[Semesterindex].courses.length === 5) {
                 oldSemesterFull = true;
@@ -64,10 +65,10 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             courses.push(course);
             const newSemester: Semester = {
                 semesternumber:1,
-                ID: oldSemesterID,
-                Full: oldSemesterFull,
+                id: oldSemesterID,
+                full: oldSemesterFull,
                 courses: courses,
-                Season: oldSemesterSeason
+                season: oldSemesterSeason
             };
             //console.log("else");
             //const modifiedList = semesters.map((item, index) => index === 0 ? newSemester : item);

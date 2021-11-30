@@ -1,5 +1,3 @@
-export type Season="Fall"|"Spring";
-
 
 export interface Course{
     ID: number;
@@ -8,15 +6,3 @@ export interface Course{
     Prereq: string;
     Description: string;
 }
-
-export interface Semester {
-    semesternumber:number;
-    ID:number;
-    Full:boolean;
-    courses: Course[];
-    Season:string
-   
-
-    
-
-  }
