@@ -3,14 +3,15 @@ import React from "react";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button} from "react-bootstrap";
-import {Course, Semester } from "../interfaces/courses";
+import {Course } from "../interfaces/courses";
+import { Semester } from "../interfaces/semester";
 //import { countReset } from "console";
 import {SemesterControl} from "./SemesterControl";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setSemesters}:
-    {/**setCourse:(c:Course)=>void, schedule:Course[], setSchedule:(s:Course[])=>void, course:Course,*/
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters}:
+    {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
     semesters: Semester[], setSemesters: (s : Semester[])=>void
     }): JSX.Element {
 
@@ -39,6 +40,12 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
         }));
     }
 
+
+    function clearCourse(){
+        setSemesters(semesters.map((semester: Semester)=>{
+            return {...semester, courses:[]};
+        }));
+    }
     
     return <div className = "classtable">
         <SemesterControl semesters={semesters} setSemesters= {setSemesters}/>
@@ -46,9 +53,11 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
             return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
                 <thead> 
                     <tr>
-                        <td>Semester {semester.semesternumber} <Button>Clear</Button><IoRemoveCircleOutline onClick= {()=>{
+                        <td>Semester {semester.semesternumber} <Button onClick= {()=>{
+                            clearCourse();
+                        }}>Clear</Button><IoRemoveCircleOutline onClick= {()=>{
                             removeSemester(semester.semesternumber);
-                        }}/></td>;
+                        }}/></td>
                     </tr>
                 </thead> 
                 <tbody>
@@ -57,7 +66,7 @@ export function Tab({/**setCourse,course,schedule,setSchedule,*/ semesters, setS
                             return <td key = {index}>{course.Name} <IoRemoveCircleOutline onClick= {()=>{
                                 removeCourse(semester.semesternumber, course.Name);
                             }}/></td>;
-                        })};
+                        })}
                     </tr>
                 </tbody>
             </Table>;
