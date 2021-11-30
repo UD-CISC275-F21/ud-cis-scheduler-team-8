@@ -24,7 +24,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
         let currentindexcount = 0;
         for (let i = 0; i < semesters.length-1; i++) {
 
-            if (semesters[i].Full == true) {
+            if (semesters[i].full == true) {
                 //console.log(i);
                 currentindexcount += 1;
             }
