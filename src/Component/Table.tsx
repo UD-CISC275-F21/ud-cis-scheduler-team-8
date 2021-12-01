@@ -10,9 +10,11 @@ import {SemesterControl} from "./SemesterControl";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters}:
+
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,setselectedSemester}:
     {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
     semesters: Semester[], setSemesters: (s : Semester[])=>void
+   , setselectedSemester:(selected:number)=>void
     }): JSX.Element {
 
     
@@ -48,9 +50,9 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
     }
     
     return <div className = "classtable">
-        <SemesterControl semesters={semesters} setSemesters= {setSemesters}/>
+        <SemesterControl semesters={semesters} setSemesters= {setSemesters} setselectedSemester={setselectedSemester}   />
         {semesters.map((semester: Semester) =>{ 
-            return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
+            return <Table striped bordered hover size="sm" key = {semester.semesternumber} onClick={()=>setselectedSemester(semester.semesternumber-1)} >
                 <thead> 
                     <tr>
                         <td>Semester {semester.semesternumber} <Button onClick= {()=>{

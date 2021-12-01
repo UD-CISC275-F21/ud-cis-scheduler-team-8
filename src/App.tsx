@@ -17,7 +17,7 @@ function App(): JSX.Element {
     //const [schedule,setSchedule] = useState <Course[]>(COURSES);
     //const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
     const [semesters, setSemesters] = useState<Semester[]>(getLocalStorageUsers());
-
+    const [selectedSemester,setselectedSemester] =useState(0);
 
    
     return (
@@ -33,9 +33,11 @@ function App(): JSX.Element {
                     course={ActiveCourse}
                     setCourse={SetActiveCourse}
                     */
+                   
+                    setselectedSemester={setselectedSemester}
                     semesters={semesters}
                     setSemesters={setSemesters}></Tab>
-                <CoursePool pool={pool} setPool={setPool} semesters={semesters} setSemesters={setSemesters}  ></CoursePool>
+                <CoursePool pool={pool} setPool={setPool} semesters={semesters} setSemesters={setSemesters} selectedSemester={selectedSemester} setselectedSemester={setselectedSemester}  ></CoursePool>
             </Row>
 
         </Container>
