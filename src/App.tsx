@@ -37,7 +37,7 @@ function App(): JSX.Element {
                     setselectedSemester={setselectedSemester}
                     semesters={semesters}
                     setSemesters={setSemesters}></Tab>
-                <CoursePool pool={pool} setPool={setPool} semesters={semesters} setSemesters={setSemesters} selectedSemester={selectedSemester} setselectedSemester={setselectedSemester}  ></CoursePool>
+                <CoursePool pool={pool} setPool={setPool} semesters={semesters} setSemesters={setSemesters} selectedSemester={selectedSemester}   ></CoursePool>
             </Row>
 
         </Container>

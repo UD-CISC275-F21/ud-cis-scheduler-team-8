@@ -11,9 +11,9 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSemester,setselectedSemester }: {
+export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSemester }: {
     pool: Course[], setPool: (newpool: Course[]) => void,
-    selectedSemester:number,setselectedSemester:(selected:number)=> void,
+    selectedSemester:number,
     semesters: Semester[], setSemesters: (schedule: Semester[]) => void
 }): JSX.Element {
     const [show, setShow] = useState(false);
@@ -21,7 +21,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
     const handleShow = () => setShow(true);
     //LOC(list of cources)
 
-    function ReturnLastSemesterIndex() {
+    /*function ReturnLastSemesterIndex() {
         let currentindexcount = 0;
         for (let i = 0; i < semesters.length-1; i++) {
 
@@ -31,7 +31,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
             }
         }
         return currentindexcount;
-    }
+    }*/
 
 
 
