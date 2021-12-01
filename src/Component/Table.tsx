@@ -1,5 +1,5 @@
 import Table from "react-bootstrap/Table";
-import React from "react";
+import React, {useState} from "react";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button} from "react-bootstrap";
@@ -7,13 +7,13 @@ import {Course } from "../interfaces/courses";
 import { Semester } from "../interfaces/semester";
 //import { countReset } from "console";
 import {SemesterControl} from "./SemesterControl";
+import "./Table.css";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters}:
-    {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
-    semesters: Semester[], setSemesters: (s : Semester[])=>void
-    }): JSX.Element {
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters}: {/**course:Course, setCourse:(c:Course)=>void*/
+    semesters: Semester[], setSemesters: (s : Semester[])=>void, }): JSX.Element {
+    const [semenumber, setSemenumber] = useState<number>(1);
 
     
     function removeSemester(semesternum: number){
@@ -41,27 +41,31 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
     }
 
 
-    function clearCourse(){
+    function clearCourses(senumber: number){
         setSemesters(semesters.map((semester: Semester)=>{
-            return {...semester, courses:[]};
+            if (senumber !== semester.semesternumber){
+                return semester;
+            }else{
+                return {...semester, courses:[]};
+            }
         }));
     }
     
     return <div className = "classtable">
-        <SemesterControl semesters={semesters} setSemesters= {setSemesters}/>
-        {semesters.map((semester: Semester) =>{ 
+        <SemesterControl semesters={semesters} setSemesters= {setSemesters} semenumber={semenumber} setSemenumber={setSemenumber}/>
+        {semesters.map((semester: Semester, index: number) =>{ 
             return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
                 <thead> 
                     <tr>
-                        <td>Semester {semester.semesternumber} <Button onClick= {()=>{
-                            clearCourse();
+                        <td>Semester {index+1} <Button onClick= {()=>{
+                            clearCourses(semester.semesternumber);
                         }}>Clear</Button><IoRemoveCircleOutline onClick= {()=>{
                             removeSemester(semester.semesternumber);
                         }}/></td>
                     </tr>
                 </thead> 
                 <tbody>
-                    <tr>
+                    <tr className = "courses">
                         {semester.courses.map((course: Course, index: number) =>{
                             return <td key = {index}>{course.Name} <IoRemoveCircleOutline onClick= {()=>{
                                 removeCourse(semester.semesternumber, course.Name);

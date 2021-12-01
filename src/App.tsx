@@ -17,6 +17,7 @@ function App(): JSX.Element {
     //const [schedule,setSchedule] = useState <Course[]>(COURSES);
     //const [ActiveCourse, SetActiveCourse] = useState<Course>(COURSES[0]);
     const [semesters, setSemesters] = useState<Semester[]>(getLocalStorageUsers());
+    
 
 
    
