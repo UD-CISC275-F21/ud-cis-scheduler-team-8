@@ -14,9 +14,11 @@ export function getLocalStorageUsers(): Semester[] {
 }
 
 
-export function SemesterControl ({semesters, setSemesters, semenumber, setSemenumber}: 
+export function SemesterControl ({semesters, setSemesters,setselectedSemester, semenumber, setSemenumber}: 
     {semesters: Semester[], setSemesters: (s : Semester[])=>void, 
-    semenumber: number, setSemenumber: (n: number)=>void,}): JSX.Element{
+    semenumber: number, setSemenumber: (n: number)=>void,
+    setselectedSemester:(selected:number)=>void }): JSX.Element{
+
 
     function save(){
         localStorage.setItem(LOCAL_STORAGE_SCHEDULE, JSON.stringify(semesters));
@@ -38,6 +40,7 @@ export function SemesterControl ({semesters, setSemesters, semenumber, setSemenu
 
         <Button onClick= {()=>{
             addSemester();
+            setselectedSemester(semesters.length);
         }}>Add Semester</Button>
 
         <Button onClick= {()=>{

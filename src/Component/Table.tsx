@@ -11,8 +11,10 @@ import "./Table.css";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters}: {/**course:Course, setCourse:(c:Course)=>void*/
-    semesters: Semester[], setSemesters: (s : Semester[])=>void, }): JSX.Element {
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,setselectedSemester}:
+    {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
+    semesters: Semester[], setSemesters: (s : Semester[])=>void, 
+    setselectedSemester:(selected:number)=>void}): JSX.Element {
     const [semenumber, setSemenumber] = useState<number>(1);
 
     
@@ -52,9 +54,9 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
     }
     
     return <div className = "classtable">
-        <SemesterControl semesters={semesters} setSemesters= {setSemesters} semenumber={semenumber} setSemenumber={setSemenumber}/>
+        <SemesterControl semesters={semesters} setSemesters= {setSemesters} semenumber={semenumber} setSemenumber={setSemenumber} setselectedSemester={setselectedSemester}/>
         {semesters.map((semester: Semester, index: number) =>{ 
-            return <Table striped bordered hover size="sm" key = {semester.semesternumber}>
+            return <Table striped bordered hover size="sm" key = {semester.semesternumber} onClick={()=>setselectedSemester(semester.semesternumber-1)} >
                 <thead> 
                     <tr>
                         <td>Semester {index+1} <Button onClick= {()=>{

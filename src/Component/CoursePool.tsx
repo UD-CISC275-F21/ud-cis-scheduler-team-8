@@ -11,8 +11,9 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool, setPool, semesters, setSemesters }: {
+export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSemester }: {
     pool: Course[], setPool: (newpool: Course[]) => void,
+    selectedSemester:number,
     semesters: Semester[], setSemesters: (schedule: Semester[]) => void
 }): JSX.Element {
     const [show, setShow] = useState(false);
@@ -20,7 +21,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
     const handleShow = () => setShow(true);
     //LOC(list of cources)
 
-    function ReturnLastSemesterIndex() {
+    /*function ReturnLastSemesterIndex() {
         let currentindexcount = 0;
         for (let i = 0; i < semesters.length-1; i++) {
 
@@ -30,7 +31,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             }
         }
         return currentindexcount;
-    }
+    }*/
 
 
 
@@ -51,20 +52,21 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             console.log(semesters);
             //const modifiedList = semesters.map((semester, index,) => index === 0 ? newSemester : semester)
             //setSemesters([semesters[0],newSemester]);
-        } else if (semesters[ReturnLastSemesterIndex()].courses.length <= 5) {
-            const Semesterindex = semesters.length - 1;
+        } else if (semesters[selectedSemester].courses.length <= 5) {
+            const Semesterindex = selectedSemester;
+            //const Semesterindex = semesters.length - 1;
             //console.log(Semesterindex);
-            const oldSemesterID = semesters[semesters.length - 1].id;
-            let oldSemesterFull = semesters[semesters.length - 1].full;
-            const oldSemesterSeason = semesters[semesters.length - 1].season;
-            const courses = [...semesters[semesters.length - 1].courses];
+            const oldSemesterID = semesters[selectedSemester ].id;
+            let oldSemesterFull = semesters[selectedSemester ].full;
+            const oldSemesterSeason = semesters[selectedSemester ].season;
+            const courses = [...semesters[selectedSemester ].courses];
             if (semesters[Semesterindex].courses.length === 5) {
                 oldSemesterFull = true;
             }
 
             courses.push(course);
             const newSemester: Semester = {
-                semesternumber:semesters[semesters.length - 1].semesternumber,
+                semesternumber:semesters[selectedSemester ].semesternumber,
                 id: oldSemesterID,
                 full: oldSemesterFull,
                 courses: courses,
@@ -73,6 +75,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters }: {
             //console.log("else");
             //const modifiedList = semesters.map((item, index) => index === 0 ? newSemester : item);
             const modifiedList = [...semesters];
+            console.log("the semester index is "+Semesterindex);
             modifiedList[Semesterindex] = newSemester;
 
             setSemesters(modifiedList);
