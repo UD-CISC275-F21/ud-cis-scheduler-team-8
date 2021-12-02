@@ -1,18 +1,5 @@
 
-.classtable{
-    width:40%;
-    float:left;
-}
-.year{
-    text-align: center;
-}
 
-.click{
-    color: blue;
+.courses{
+    font-size: 15px;
 }
-
-button{
-    background-color:transparent;
-    border: none;
-}
-
