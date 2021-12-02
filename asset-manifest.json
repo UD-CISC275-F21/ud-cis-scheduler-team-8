@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/ud-cis-scheduler-team-8/static/css/main.fc7a59bf.chunk.css",
-    "main.js": "/ud-cis-scheduler-team-8/static/js/main.dcaa64df.chunk.js",
-    "main.js.map": "/ud-cis-scheduler-team-8/static/js/main.dcaa64df.chunk.js.map",
-    "runtime-main.js": "/ud-cis-scheduler-team-8/static/js/runtime-main.982f0f15.js",
-    "runtime-main.js.map": "/ud-cis-scheduler-team-8/static/js/runtime-main.982f0f15.js.map",
+    "main.css": "/ud-cis-scheduler-team-8/static/css/main.ee645abf.chunk.css",
+    "main.js": "/ud-cis-scheduler-team-8/static/js/main.d4f3813c.chunk.js",
+    "main.js.map": "/ud-cis-scheduler-team-8/static/js/main.d4f3813c.chunk.js.map",
+    "runtime-main.js": "/ud-cis-scheduler-team-8/static/js/runtime-main.01a5d96a.js",
+    "runtime-main.js.map": "/ud-cis-scheduler-team-8/static/js/runtime-main.01a5d96a.js.map",
     "static/css/2.f2512455.chunk.css": "/ud-cis-scheduler-team-8/static/css/2.f2512455.chunk.css",
-    "static/js/2.b5e47987.chunk.js": "/ud-cis-scheduler-team-8/static/js/2.b5e47987.chunk.js",
-    "static/js/2.b5e47987.chunk.js.map": "/ud-cis-scheduler-team-8/static/js/2.b5e47987.chunk.js.map",
-    "static/js/3.68644871.chunk.js": "/ud-cis-scheduler-team-8/static/js/3.68644871.chunk.js",
-    "static/js/3.68644871.chunk.js.map": "/ud-cis-scheduler-team-8/static/js/3.68644871.chunk.js.map",
+    "static/js/2.982024b4.chunk.js": "/ud-cis-scheduler-team-8/static/js/2.982024b4.chunk.js",
+    "static/js/2.982024b4.chunk.js.map": "/ud-cis-scheduler-team-8/static/js/2.982024b4.chunk.js.map",
+    "static/js/3.aebc00bc.chunk.js": "/ud-cis-scheduler-team-8/static/js/3.aebc00bc.chunk.js",
+    "static/js/3.aebc00bc.chunk.js.map": "/ud-cis-scheduler-team-8/static/js/3.aebc00bc.chunk.js.map",
     "index.html": "/ud-cis-scheduler-team-8/index.html",
     "static/css/2.f2512455.chunk.css.map": "/ud-cis-scheduler-team-8/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.fc7a59bf.chunk.css.map": "/ud-cis-scheduler-team-8/static/css/main.fc7a59bf.chunk.css.map",
-    "static/js/2.b5e47987.chunk.js.LICENSE.txt": "/ud-cis-scheduler-team-8/static/js/2.b5e47987.chunk.js.LICENSE.txt"
+    "static/css/main.ee645abf.chunk.css.map": "/ud-cis-scheduler-team-8/static/css/main.ee645abf.chunk.css.map",
+    "static/js/2.982024b4.chunk.js.LICENSE.txt": "/ud-cis-scheduler-team-8/static/js/2.982024b4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.982f0f15.js",
+    "static/js/runtime-main.01a5d96a.js",
     "static/css/2.f2512455.chunk.css",
-    "static/js/2.b5e47987.chunk.js",
-    "static/css/main.fc7a59bf.chunk.css",
-    "static/js/main.dcaa64df.chunk.js"
+    "static/js/2.982024b4.chunk.js",
+    "static/css/main.ee645abf.chunk.css",
+    "static/js/main.d4f3813c.chunk.js"
   ]
 }
