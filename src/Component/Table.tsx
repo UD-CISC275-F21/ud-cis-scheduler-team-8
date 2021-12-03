@@ -11,17 +11,30 @@ import "./Table.css";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,setselectedSemester}:
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,selectedSemester,setselectedSemester}:
     {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
     semesters: Semester[], setSemesters: (s : Semester[])=>void, 
-    setselectedSemester:(selected:number)=>void}): JSX.Element {
+    selectedSemester:number,setselectedSemester:(selected:number)=>void}): JSX.Element {
     const [semenumber, setSemenumber] = useState<number>(1);
 
-    
+    function resetSemesterNumbers(){
+        const semestersCopy=[...semesters];
+        
+        setSemesters(semestersCopy);
+    }
+
+
     function removeSemester(semesternum: number){
-        setSemesters(semesters.filter((oldSemester: Semester): boolean => {
+        const newList =semesters.filter((oldSemester: Semester): boolean => {
             return semesternum !== oldSemester.semesternumber;
-        }));
+        });
+
+        for(let i=0;i<newList.length;i++){
+            //console.log("the semester number is "+semesters[i].semesternumber +" index is "+ i);
+            newList[i].semesternumber=i+1;      
+        }
+        setSemesters(newList);
+        //reset numbers in newList
     }
 
     // function removeCourse(senumber: number, coursename: string){
@@ -30,6 +43,8 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
     //         return coursename !== oldSemester.courses.Name;
     //     }));
     // }
+    
+
     function removeCourse(senumber: number, coursename: string){
         setSemesters(semesters.map((semester: Semester)=>{
             if (senumber !== semester.semesternumber){
@@ -63,6 +78,7 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
                             clearCourses(semester.semesternumber);
                         }}>Clear</Button><IoRemoveCircleOutline onClick= {()=>{
                             removeSemester(semester.semesternumber);
+                            //resetSemesterNumbers();
                         }}/></td>
                     </tr>
                 </thead> 
@@ -71,6 +87,7 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
                         {semester.courses.map((course: Course, index: number) =>{
                             return <td key = {index}>{course.Name} <IoRemoveCircleOutline onClick= {()=>{
                                 removeCourse(semester.semesternumber, course.Name);
+                                
                             }}/></td>;
                         })}
                     </tr>
