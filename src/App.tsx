@@ -33,7 +33,7 @@ function App(): JSX.Element {
                     course={ActiveCourse}
                     setCourse={SetActiveCourse}
                     */
-                   
+                    
                     setselectedSemester={setselectedSemester}
                     semesters={semesters}
                     setSemesters={setSemesters}></Tab>
