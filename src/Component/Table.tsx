@@ -11,17 +11,13 @@ import "./Table.css";
 //import COURSES from "../assets/courses.json";
 
 
-export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,selectedSemester,setselectedSemester}:
+export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, setSemesters,setselectedSemester}:
     {/**course:Course, setCourse:(c:Course)=>void,schedule:Course[], setSchedule:(s:Course[])=>void*/
     semesters: Semester[], setSemesters: (s : Semester[])=>void, 
-    selectedSemester:number,setselectedSemester:(selected:number)=>void}): JSX.Element {
+   setselectedSemester:(selected:number)=>void}): JSX.Element {
     const [semenumber, setSemenumber] = useState<number>(1);
 
-    function resetSemesterNumbers(){
-        const semestersCopy=[...semesters];
-        
-        setSemesters(semestersCopy);
-    }
+    
 
 
     function removeSemester(semesternum: number){
