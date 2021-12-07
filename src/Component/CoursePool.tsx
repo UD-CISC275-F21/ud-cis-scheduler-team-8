@@ -11,14 +11,17 @@ import { IoIosMore, IoIosAddCircleOutline } from "react-icons/io";
 import { EditableCourseItem } from "./EDitableCourseItem";
 
 
-export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSemester }: {
+export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSemester }: {
     pool: Course[], setPool: (newpool: Course[]) => void,
-    selectedSemester:number,
+    selectedSemester: number,
     semesters: Semester[], setSemesters: (schedule: Semester[]) => void
 }): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [ModalCourseID,setModalCourseID]=useState<number>();
+    const [ModalCourseName,setModalCourseName]=useState<string>();
+    const [ModalCourseDescription,setModalCourseDescription]=useState<string>();
     //LOC(list of cources)
 
     /*function ReturnLastSemesterIndex() {
@@ -38,7 +41,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
     function PushCourseToSchedule(course: Course) {
         if (semesters.length === 0) {
             const newSemester: Semester = {
-                semesternumber:1,
+                semesternumber: 1,
                 id: 2020,
                 full: false,
                 courses: [course],
@@ -56,17 +59,17 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
             const Semesterindex = selectedSemester;
             //const Semesterindex = semesters.length - 1;
             //console.log(Semesterindex);
-            const oldSemesterID = semesters[selectedSemester ].id;
-            let oldSemesterFull = semesters[selectedSemester ].full;
-            const oldSemesterSeason = semesters[selectedSemester ].season;
-            const courses = [...semesters[selectedSemester ].courses];
+            const oldSemesterID = semesters[selectedSemester].id;
+            let oldSemesterFull = semesters[selectedSemester].full;
+            const oldSemesterSeason = semesters[selectedSemester].season;
+            const courses = [...semesters[selectedSemester].courses];
             if (semesters[Semesterindex].courses.length === 5) {
                 oldSemesterFull = true;
             }
 
             courses.push(course);
             const newSemester: Semester = {
-                semesternumber:semesters[selectedSemester ].semesternumber,
+                semesternumber: semesters[selectedSemester].semesternumber,
                 id: oldSemesterID,
                 full: oldSemesterFull,
                 courses: courses,
@@ -75,13 +78,15 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
             //console.log("else");
             //const modifiedList = semesters.map((item, index) => index === 0 ? newSemester : item);
             const modifiedList = [...semesters];
-            console.log("the semester index is "+Semesterindex);
+            console.log("the semester index is " + Semesterindex);
             modifiedList[Semesterindex] = newSemester;
 
             setSemesters(modifiedList);
 
             //console.log(semesters);
 
+        } else {
+            alert("You may only add six classes to a semester. Please select or add another semester. ");
         }
 
 
@@ -91,7 +96,12 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
 
     }
 
+    function showIDinModal(course:Course){
+        setModalCourseID(course.ID);
+        setModalCourseName(course.Name);
+        setModalCourseDescription(course.Description);
 
+    }
 
 
 
@@ -100,12 +110,49 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
         return <div key={course.ID}>
-            <div><Button variant="tansparant" onClick={() => PushCourseToSchedule(course)}><IoIosAddCircleOutline /></Button>
+            <div><Button variant="tansparant" onClick={() => PushCourseToSchedule(course) }><IoIosAddCircleOutline /></Button>
                 {course.Name.toUpperCase()}
-                <Button variant="tansparant" onClick={handleShow}><IoIosMore /></Button><EditableCourseItem course={course} setPool={setPool} pool={pool} />
+                <Button variant="tansparant" onClick={()=>{ 
+                    handleShow(); 
+                    showIDinModal(course);
+                } }><IoIosMore /></Button><EditableCourseItem course={course} setPool={setPool} pool={pool} />
             </div>
 
-            <Modal show={show} onHide={handleClose}>
+            
+
+
+        </div>;
+
+    });
+
+    const ModalBox = <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>
+                <strong>CISC{ModalCourseID}: {ModalCourseName}</strong>
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {ModalCourseDescription}
+        </Modal.Body>
+    </Modal>;
+
+
+
+
+    return <Col className="pool">
+        <h2>Course Pool</h2>
+        {ModalBox}
+        {courseItems}
+
+
+
+    </Col>;
+}
+
+
+/*
+
+ <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>
                         <strong>CISC{course.ID}: {course.Name}</strong>
@@ -117,24 +164,11 @@ export function CoursePool({ pool, setPool, semesters, setSemesters,selectedSeme
             </Modal>
 
 
-        </div>;
-
-    });
 
 
 
 
-    return <Col className="pool">
-        <h2>Course Pool</h2>
-        {courseItems}
 
-
-
-    </Col>;
-}
-
-
-/*
 
  <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
