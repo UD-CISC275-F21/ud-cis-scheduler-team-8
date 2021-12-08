@@ -22,20 +22,9 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
     const [ModalCourseID,setModalCourseID]=useState<number>();
     const [ModalCourseName,setModalCourseName]=useState<string>();
     const [ModalCourseDescription,setModalCourseDescription]=useState<string>();
-    //LOC(list of cources)
+    
 
-    /*function ReturnLastSemesterIndex() {
-        let currentindexcount = 0;
-        for (let i = 0; i < semesters.length-1; i++) {
-
-            if (semesters[i].full == true) {
-                //console.log(i);
-                currentindexcount += 1;
-            }
-        }
-        return currentindexcount;
-    }*/
-
+    
 
 
     function PushCourseToSchedule(course: Course) {
@@ -105,7 +94,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
 
 
 
-    //const [ActiveCourse, SetActiveCourse] = useState();
+    
 
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
@@ -152,35 +141,8 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
 
 /*
 
- <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>
-                        <strong>CISC{course.ID}: {course.Name}</strong>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {course.Description}
-                </Modal.Body>
-            </Modal>
-
-
-
-
-
-
-
-
- <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>
-                    <strong>CISC{pool[0].ID}: {pool[0].Name}</strong>
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                {pool[0].Description}
-            </Modal.Body>
-        </Modal>
-
+ 
+ 
 
 
 function Course_pull(): JSX.Element {
