@@ -67,7 +67,7 @@ export function Tab({/**course, setCourse,schedule,setSchedule,*/ semesters, set
     return <div className = "classtable">
         <SemesterControl semesters={semesters} setSemesters= {setSemesters} semenumber={semenumber} setSemenumber={setSemenumber} setselectedSemester={setselectedSemester}/>
         {semesters.map((semester: Semester, index: number) =>{ 
-            return <Table striped bordered hover size="sm" key = {semester.semesternumber} onClick={()=>setselectedSemester(semester.semesternumber-1)} >
+            return <Table striped bordered hover size="sm" key = {semester.semesternumber} onClick={()=>setselectedSemester(index)} >
                 <thead> 
                     <tr>
                         <td>Semester {index+1} <Button onClick= {()=>{
