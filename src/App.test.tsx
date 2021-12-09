@@ -7,7 +7,7 @@ import CoursePool from "./App";
 //import Col from "../src/Component/SemesterControl"
 
 afterEach(() => {
-    cleanup()
+    cleanup();
 })
 
 test("renders UD CISC Scheduler text", () => {
@@ -34,8 +34,7 @@ for(let i=0;i<COURSES.length;i++){
     test("test if " + name +" is shown",()=>{
         render(<CoursePool/>);
         const linkElements = screen.getAllByText(name);
-        expect(linkElements.length).toBeGreaterThan(0)
-       
+        expect(linkElements.length).toBeGreaterThan(0);
     }) 
 };
 
