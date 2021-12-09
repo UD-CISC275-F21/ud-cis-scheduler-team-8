@@ -98,7 +98,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
 
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
-        return <div key={course.ID}>
+        return <div key={course.ID} id={"coursePoolItems"+course.ID+" "+course.Name}>
             <div><Button variant="tansparant" onClick={() => PushCourseToSchedule(course) }><IoIosAddCircleOutline /></Button>
                 {course.Name.toUpperCase()}
                 <Button variant="tansparant" onClick={()=>{ 
