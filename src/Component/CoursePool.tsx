@@ -22,6 +22,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
     const [ModalCourseID,setModalCourseID]=useState<number>();
     const [ModalCourseName,setModalCourseName]=useState<string>();
     const [ModalCourseDescription,setModalCourseDescription]=useState<string>();
+    const [Modalprere,setModalPrere]=useState<string>();
     //LOC(list of cources)
 
     /*function ReturnLastSemesterIndex() {
@@ -100,7 +101,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
         setModalCourseID(course.ID);
         setModalCourseName(course.Name);
         setModalCourseDescription(course.Description);
-
+        setModalPrere(course.Prereq);
     }
 
 
@@ -132,7 +133,9 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            {ModalCourseDescription}
+            <strong>Description: </strong>{ModalCourseDescription}
+            <br></br>
+            <strong>Prereuqirement: </strong> {Modalprere}
         </Modal.Body>
     </Modal>;
 
