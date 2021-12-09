@@ -37,6 +37,7 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
         return currentindexcount;
     }*/
 
+    
 
 
     function PushCourseToSchedule(course: Course) {
@@ -106,11 +107,11 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
 
 
 
-    //const [ActiveCourse, SetActiveCourse] = useState();
+    
 
 
     const courseItems = pool.map(function (course: Course): JSX.Element {
-        return <div key={course.ID}>
+        return <div key={course.ID} id={"coursePoolItems"+course.ID+" "+course.Name}>
             <div><Button variant="tansparant" onClick={() => PushCourseToSchedule(course) }><IoIosAddCircleOutline /></Button>
                 {course.Name.toUpperCase()}
                 <Button variant="tansparant" onClick={()=>{ 
@@ -155,35 +156,8 @@ export function CoursePool({ pool, setPool, semesters, setSemesters, selectedSem
 
 /*
 
- <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>
-                        <strong>CISC{course.ID}: {course.Name}</strong>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {course.Description}
-                </Modal.Body>
-            </Modal>
-
-
-
-
-
-
-
-
- <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>
-                    <strong>CISC{pool[0].ID}: {pool[0].Name}</strong>
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                {pool[0].Description}
-            </Modal.Body>
-        </Modal>
-
+ 
+ 
 
 
 function Course_pull(): JSX.Element {
