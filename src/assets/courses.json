@@ -1,0 +1,100 @@
+[
+    {
+      "ID": 108,
+      "Name": "CISC108: INTRO TO COMPUTER SCIENCE I",
+      "Kind": "Required",
+      "Prereq": "None",
+      "Description": "Computing and principles of programming with an emphasis on systematic program design. Topics include functional programming, data abstraction, procedural abstraction, use of control and state, recursion, testing, and object-oriented programming concepts. Requires no prior programming experience, open to any major, but intended primarily for majors and minors in computer science or mathematics."
+    },
+    {
+      "ID": 181,
+      "Name": "CISC181: INTRO TO COMPUTER SCIENCE II",
+      "Kind": "Required",
+      "Prereq": "CISC108 or CISC106",
+      "Description": "Principles of computer science illustrated and applied through programming in an object oriented language. Programming projects illustrate computational problems, styles and issues that arise in computer systems development and in all application areas of computation."
+    },
+    {
+      "ID": 210,
+      "Name": "CISC210: INTRO TO SYSTEMS PROGRAMMING",
+      "Kind": "Required",
+      "Prereq": "CISC108 or CISC106",
+      "Description": "Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects."
+    },
+    {
+      "ID": 220,
+      "Name": "CISC220: DATA STRUCTURES",
+      "Kind": "Required",
+      "Prereq": "CISC210",
+      "Description": "Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching."
+    },
+    {
+      "ID": 260,
+      "Name": "CISC260: MACH ORGANZTN & ASSEMBLY LANG",
+      "Kind": "Required",
+      "Prereq": "CISC210",
+      "Description": "Introduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques."
+    },
+    {
+      "ID": 275,
+      "Name": "CISC275: INTRO TO SOFTWARE ENGINEERING",
+      "Kind": "Required",
+      "Prereq": "CISC108 and CISC210",
+      "Description": "Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing)."
+    },
+    {
+      "ID": 241,
+      "Name": "MATH241: ANALYTIC GEOMETRY & CALCULUS A",
+      "Kind": "Required",
+      "Prereq": "MATH117",
+      "Description": "Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay."
+    },
+    {
+      "ID": 242,
+      "Name": "MATH242: ANALYTIC GEOMETRY & CALCULUS B",
+      "Kind": "Required",
+      "Prereq": "MATH241",
+      "Description": "Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay."
+    },
+    {
+      "ID": 320,
+      "Name": " CISC320: Introduction to Algorithms",
+      "Kind": "Electives",
+      "Prereq": "CISC220",
+      "Description": "Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness."
+    },
+    {
+      "ID": 360,
+      "Name": "CISC360: Computer Architecture",
+      "Kind": "Electives",
+      "Prereq": "CISC220 and CISC260",
+      "Description": "Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches."
+    },
+    {
+      "ID": 361,
+      "Name": " CISC361: Operating Systems",
+      "Kind": "Electives",
+      "Prereq": "CISC220 and CISC260",
+      "Description": "Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices."
+    },
+    {
+      "ID": 372,
+      "Name": "CISC372: Parallel Computing",
+      "Kind": "Electives",
+      "Prereq": "CISC220 and CISC260",
+      "Description": "Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation."
+    },
+    {
+      "ID": 437,
+      "Name": "CISC437: Database Systems",
+      "Kind": "Electives",
+      "Prereq": "CISC220",
+      "Description": "Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases."
+    },
+    {
+      "ID": 110,
+      "Name": "ENGL110: Seminar in Composition",
+      "Kind": "Required",
+      "Prereq": "None",
+      "Description": "Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.."
+    }
+  ]
